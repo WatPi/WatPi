@@ -8,6 +8,8 @@ pip-selfcheck.json
 # Django related 
 # src/<yourproject>/settings/local.py
 # static-cdn/  # any collected static files 
+db.sqlite3
+migrations/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -15,16 +17,6 @@ __pycache__/
 *$py.class
 
 # C extensions.DS_STORE
-
-# Virtualenv related
-bin/
-include/
-pip-selfcheck.json
-
-# Django related 
-# src/<yourproject>/settings/local.py
-# static-cdn/  # any collected static files 
-*.so
 
 # Distribution / packaging
 .Python
@@ -119,3 +111,4 @@ ENV/
 
 # mypy
 .mypy_cache/
+
