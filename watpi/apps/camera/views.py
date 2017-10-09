@@ -9,8 +9,7 @@ import picamera
 def index(request):
     # camera = picamera.PiCamera(resolution=(1024, 768))
     response = "Placeholder to verify rover app creation."
-    context = {'camera': camera,
-               'response': response, 
+    context = {'response': response, 
                'image': 'images/image2.jpg', 
                'caption': 'Here is your image!', }
     return render(request, 'camera_index.html', context=context)
