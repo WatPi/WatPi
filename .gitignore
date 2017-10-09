@@ -115,6 +115,8 @@ ENV/
 .mypy_cache/
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< c79aa82130d75f52b849f72a31e191231ff9cc82
 # System directory files
 /node_modules
@@ -126,9 +128,13 @@ package-lock.json
 packages/
 >>>>>>> Updated .gitignore and added silly logo.
 =======
+>>>>>>> e7430a8e95d0b0fd81e3eec2d6c907d7c3c01d16
 # Custom files
 node_modules/
 package-lock.json
 packages/
 Wat-Pi-*.json
+<<<<<<< HEAD
+=======
 >>>>>>> 8c19453954797c0b55330e7af790655053699b3e
+>>>>>>> e7430a8e95d0b0fd81e3eec2d6c907d7c3c01d16
