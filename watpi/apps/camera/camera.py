@@ -12,10 +12,8 @@ class Camera(object):
     def snap_sm_photo(self):
         self.camera.capture('image.jpg', resize=(320, 240))
 
-
     def snap_lg_photo(self):
         self.camera.capture('image.jpg', resize=(800, 600))
-
 
     def capture_10s_video(self):
         camera.start_recording('video.h264')
@@ -27,12 +25,9 @@ class Camera(object):
         camera.vflip = True
         camera.hflip = True
         camera.brightness = 60
-        
 
     def __init__(self):
         camera.start_preview()
         sleep(1)
-
-
 
 Camera.snap_sm_photo()
