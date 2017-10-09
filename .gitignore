@@ -17,6 +17,7 @@ __pycache__/
 # C extensions.DS_STORE
 
 # Virtualenv related
+wat_env/
 bin/
 include/
 pip-selfcheck.json
