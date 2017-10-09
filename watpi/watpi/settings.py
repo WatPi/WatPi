@@ -25,7 +25,7 @@ SECRET_KEY = 'gx=5st#=_)83@ylzlyuc%0^h4otkvn3_ec-znrm*y=rnprk!@^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['daintiest-kudu-1899.dataplicity.io',]
+ALLOWED_HOSTS = ['daintiest-kudu-1899.dataplicity.io', u'127.0.0.1', u'localhost']
 
 
 # Application definition
