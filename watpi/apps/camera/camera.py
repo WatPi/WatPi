@@ -1,80 +1,36 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import argparse
-import base64
+from time import sleep
 import picamera
-import json
-
-from googleapiclient import discovery
-from oauth2client.client import GoogleCredentials
-from time import sleep
-
-"""
-camera = picamera.PiCamera()
-camera.capture('image.jpg')
-
-camera.start_preview()
-camera.vflip = True
-camera.hflip = True
-camera.brightness = 60
-
-camera.start_recording('video.h264')
-sleep(5)
-camera.stop_recording()
 
 
-from time import sleep
-from picamera import PiCamera
-
-def take_image(self):
-camera = PiCamera()
-camera.resolution = (1024, 768)
-camera.start_preview()
-# Camera warm-up time
-sleep(2)
-camera.capture('foo.jpg', resize=(320, 240))
-"""
-
-"""
-This script uses the Vision API's label detection capabilities to find a label
-based on an image's content.
-"""
-
-
-def takephoto():
+class Camera(object):
     camera = picamera.PiCamera()
     camera.resolution = (1024, 768)
-    camera.start_preview()
-    # Camera warm-up time
-    sleep(2)
-    camera.capture('image.jpg', resize=(320, 240))
+
+    def snap_sm_photo(self):
+        camera.capture('image.jpg', resize=(320, 240))
 
 
-def main():
-    takephoto()  # First take a picture
-    """Run a label request on a single image"""
+    def snap_lg_photo(self):
+        camera.capture('image.jpg', resize=(800, 600))
 
-    credentials = GoogleCredentials.get_application_default()
-    service = discovery.build('vision', 'v1', credentials=credentials)
 
-    with open('image.jpg', 'rb') as image:
-        image_content = base64.b64encode(image.read())
-        service_request = service.images().annotate(body={
-            'requests': [{
-                'image': {
-                    'content': image_content.decode('UTF-8')
-                },
-                'features': [{
-                    'type': 'LABEL_DETECTION',
-                    'maxResults': 10
-                }]
-            }]
-        })
-        response = service_request.execute()
-        # Print it out and make it somewhat pretty.
-        print json.dumps(response, indent=4, sort_keys=True)
+    def capture_10s_video(self):
+        camera.start_recording('video.h264')
+        sleep(10)
+        camera.stop_recording()
 
-if __name__ == '__main__':
+    def video_preview(self):
+        camera.start_preview()
+        camera.vflip = True
+        camera.hflip = True
+        camera.brightness = 60
+        
 
-    main()
+    def __init__(self):
+        camera.start_preview()
+        sleep(1)
+
+
