@@ -6,15 +6,15 @@ import picamera
 
 
 class Camera(object):
-    camera = picamera.PiCamera()
-    camera.resolution = (1024, 768)
+    self.camera = picamera.PiCamera()
+    self.camera.resolution = (1024, 768)
 
     def snap_sm_photo(self):
-        camera.capture('image.jpg', resize=(320, 240))
+        self.camera.capture('image.jpg', resize=(320, 240))
 
 
     def snap_lg_photo(self):
-        camera.capture('image.jpg', resize=(800, 600))
+        self.camera.capture('image.jpg', resize=(800, 600))
 
 
     def capture_10s_video(self):
@@ -34,3 +34,5 @@ class Camera(object):
         sleep(1)
 
 
+
+Camera.snap_sm_photo()
