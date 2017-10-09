@@ -112,6 +112,8 @@ ENV/
 # mypy
 .mypy_cache/
 
+# Custom files
 node_modules/
 package-lock.json
 packages/
+Wat-Pi-*.json
