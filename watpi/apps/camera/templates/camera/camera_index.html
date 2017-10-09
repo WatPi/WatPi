@@ -23,7 +23,7 @@
         <img src="{{ image }}"> 
         {{ caption }}
 
-        <form method="POST" action="take_photo">
+        <form method="POST" action="take_photo/">
             {% csrf_token %}
             <input type="submit" name="take_photo" value="Take a Picture" class="btn btn-default">Take a picture</input>
         </form>
