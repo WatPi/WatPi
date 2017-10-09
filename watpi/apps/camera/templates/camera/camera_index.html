@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-
+{% load static %}
 
 {% block title %}
 <title>WatPi - Camera </title>
@@ -20,10 +20,10 @@
     <div class="panel panel-body">
         <h1>WatPi - Camera</h1>
 
-        <img src="{{ image }}"> 
+        <img src="{% static 'images/image.jpg' %}" alt="Your image"> 
         {{ caption }}
 
-        <a href="{% url 'camera:take_photo' %}" value="Take a Picture" class="btn btn-default">Take a picture</input>
+        <a href="{% url 'camera:take_photo' %}" value="Take a Picture" class="btn btn-default">Take a picture</a>
 
 
     </div>
