@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'camera_index.html', context=context)
 
 
-def snap_photo(request):
+def snap_photo(request, camera=picamera.PiCamera(resolution=(1024, 768))):
     # camera = picamera.PiCamera(resolution=(1024, 768))
     image = camera.capture('apps/camera/static/images/image2.jpg', resize=(320, 240))
     context = {'image': 'images/image2.jpg',
