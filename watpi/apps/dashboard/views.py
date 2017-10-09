@@ -5,5 +5,8 @@ from django.shortcuts import HttpResponse, redirect, render
 
 
 def index(request):
-    response = "Placeholder to verify dashboard app creation."
-    return render(request, 'dashboard_index.html', context={'response': response, })
+    if request.user.is_authenticated:
+        response = "Placeholder to verify dashboard app creation."
+        return render(request, 'dashboard_index.html', context={'response': response, })
+    else:
+        return redirect('/login')
