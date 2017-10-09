@@ -12,15 +12,12 @@ def index(request):
 
 
 def snap_photo(request):
-    try:
-        camera = picamera.PiCamera(resolution=(1024, 768))
-    except:
-        pass
-    finally:
-        image = camera.capture('apps/camera/static/images/image2.jpg', resize=(320, 240))
-        context = {'image': 'images/image2.jpg',
-                'caption': 'Here is your image!', }
-        return render(request, 'camera_index.html', context=context)
+    camera = picamera.PiCamera(resolution=(1024, 768))
+    image = camera.capture('apps/camera/static/images/image2.jpg', resize=(320, 240))
+    context = {'image': 'images/image2.jpg',
+               'caption': 'Here is your image!', }
+    camera = False
+    return render(request, 'camera_index.html', context=context)
 
 
 def snap_lg_photo(request):
