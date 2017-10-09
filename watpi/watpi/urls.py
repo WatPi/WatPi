@@ -19,5 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^dashboard/', include('apps.dashboard.urls', namespace='dashboard')),
-    # TODO: add rover urls
+    # TODO: add rover and camera urls
 ]
