@@ -114,7 +114,13 @@ ENV/
 # mypy
 .mypy_cache/
 
+<<<<<<< c79aa82130d75f52b849f72a31e191231ff9cc82
 # System directory files
 /node_modules
 /packages
 package-lock.json
+=======
+node_modules/
+package-lock.json
+packages/
+>>>>>>> Updated .gitignore and added silly logo.
