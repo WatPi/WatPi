@@ -21,7 +21,7 @@ def snap_photo(request, camera=picamera.PiCamera(resolution=(1024, 768))):
     image = camera.capture('apps/camera/static/images/image2.jpg', resize=(320, 240))
     context = {'image': 'images/image2.jpg',
                'caption': 'Here is your image!', }
-    return redirect(reverse(('index'))
+    return redirect(reverse('index'))
     # return render(request, 'camera_index.html', context=context)
 
 
