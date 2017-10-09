@@ -7,8 +7,8 @@ import picamera
 
 
 def index(request):
-    response = "Placeholder to verify camera app creation."
-    return HttpResponse(response)
+    response = "Placeholder to verify rover app creation."
+    return render(request, 'camera_index.html', context={'response': response, })
 
 
 def snap_photo(request):
