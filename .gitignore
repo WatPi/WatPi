@@ -1,6 +1,8 @@
 .DS_STORE
 
 # Virtualenv related
+wat_env/
+venv/
 bin/
 include/
 pip-selfcheck.json
@@ -8,6 +10,8 @@ pip-selfcheck.json
 # Django related 
 # src/<yourproject>/settings/local.py
 # static-cdn/  # any collected static files 
+db.sqlite3
+migrations/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -15,17 +19,6 @@ __pycache__/
 *$py.class
 
 # C extensions.DS_STORE
-
-# Virtualenv related
-wat_env/
-bin/
-include/
-pip-selfcheck.json
-
-# Django related 
-# src/<yourproject>/settings/local.py
-# static-cdn/  # any collected static files 
-*.so
 
 # Distribution / packaging
 .Python
@@ -120,3 +113,22 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+<<<<<<< HEAD
+<<<<<<< c79aa82130d75f52b849f72a31e191231ff9cc82
+# System directory files
+/node_modules
+/packages
+package-lock.json
+=======
+node_modules/
+package-lock.json
+packages/
+>>>>>>> Updated .gitignore and added silly logo.
+=======
+# Custom files
+node_modules/
+package-lock.json
+packages/
+Wat-Pi-*.json
+>>>>>>> 8c19453954797c0b55330e7af790655053699b3e
