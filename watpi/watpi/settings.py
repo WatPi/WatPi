@@ -25,7 +25,10 @@ SECRET_KEY = 'gx=5st#=_)83@ylzlyuc%0^h4otkvn3_ec-znrm*y=rnprk!@^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['daintiest-kudu-1899.dataplicity.io',]
+ALLOWED_HOSTS = [
+    'daintiest-kudu-1899.dataplicity.io',
+    'localhost',
+]
 
 
 # Application definition
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     'apps.camera',
     'apps.dashboard',
     'apps.rover',
+    'apps.login',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +61,7 @@ ROOT_URLCONF = 'watpi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(__file__), '../watpi/templates/'), 
+        'DIRS': [os.path.join(os.path.dirname(__file__), '../watpi/templates/'),
                  os.path.join(os.path.dirname(__file__), '../apps/dashboard/templates/dashboard/'),
                  os.path.join(os.path.dirname(__file__), '../apps/camera/templates/camera/'),
                  os.path.join(os.path.dirname(__file__), '../apps/rover/templates/rover/'), ],
