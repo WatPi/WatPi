@@ -29,7 +29,8 @@ def index(request):
     else:
         if request.user.is_authenticated():
             user = User.objects.get(id=request.user.id)
-            user.password
+            post = request.POST
+
         else:
             post = request.POST
             form = LoginForm(post)
