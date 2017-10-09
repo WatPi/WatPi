@@ -29,15 +29,14 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
-    'apps.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'apps.camera',
     'apps.dashboard',
     'apps.rover',
@@ -58,7 +57,10 @@ ROOT_URLCONF = 'watpi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(os.path.dirname(__file__), '../watpi/templates/'), 
+                 os.path.join(os.path.dirname(__file__), '../apps/dashboard/templates/dashboard/'),
+                 os.path.join(os.path.dirname(__file__), '../apps/camera/templates/camera/'),
+                 os.path.join(os.path.dirname(__file__), '../apps/rover/templates/rover/'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +74,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'watpi.wsgi.application'
+
+FILES_DIR = os.path.abspath(os.path.join(BASE_DIR, '../watpi/templates'))
 
 
 # Database
@@ -122,3 +126,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")

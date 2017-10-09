@@ -10,31 +10,6 @@ from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
 from time import sleep
 
-"""
-camera = picamera.PiCamera()
-camera.capture('image.jpg')
-
-camera.start_preview()
-camera.vflip = True
-camera.hflip = True
-camera.brightness = 60
-
-camera.start_recording('video.h264')
-sleep(5)
-camera.stop_recording()
-
-
-from time import sleep
-from picamera import PiCamera
-
-def take_image(self):
-camera = PiCamera()
-camera.resolution = (1024, 768)
-camera.start_preview()
-# Camera warm-up time
-sleep(2)
-camera.capture('foo.jpg', resize=(320, 240))
-"""
 
 """
 This script uses the Vision API's label detection capabilities to find a label

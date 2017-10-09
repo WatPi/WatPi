@@ -6,4 +6,4 @@ from django.shortcuts import HttpResponse, redirect, render
 
 def index(request):
     response = "Placeholder to verify dashboard app creation."
-    return HttpResponse(response)
+    return render(request, 'dashboard_index.html', context={'response': response, })
