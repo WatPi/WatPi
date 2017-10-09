@@ -46,7 +46,7 @@ from oauth2client.client import GoogleCredentials
 def takephoto():
     camera = picamera.PiCamera()
     camera.resolution = (1024, 768)
-    amera.start_preview()
+    camera.start_preview()
     # Camera warm-up time
     sleep(2)
     camera.capture('image.jpg', resize=(320, 240))
