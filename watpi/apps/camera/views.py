@@ -14,6 +14,8 @@ def index(request):
 def snap_photo(request):
     try:
         camera = picamera.PiCamera(resolution=(1024, 768))
+    except:
+        pass
     finally:
         image = camera.capture('apps/camera/static/images/image2.jpg', resize=(320, 240))
         context = {'image': 'images/image2.jpg',
