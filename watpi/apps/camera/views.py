@@ -38,9 +38,9 @@ def capture_10s_video(request, camera=picamera.PiCamera(resolution=(1024, 768)))
     return redirect(reverse('camera:index'))
 
 
-def video_preview(request, camera=picamera.PiCamera(resolution=(1024, 768))):
-    camera.start_preview()
-    camera.vflip = True
-    camera.hflip = True
-    camera.brightness = 60
-    return redirect(reverse('camera:index'))
+# def video_preview(request, camera=picamera.PiCamera(resolution=(1024, 768))):
+#     camera.start_preview()
+#     camera.vflip = True
+#     camera.hflip = True
+#     camera.brightness = 60
+#     return redirect(reverse('camera:index'))
