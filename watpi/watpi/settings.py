@@ -25,14 +25,11 @@ SECRET_KEY = 'gx=5st#=_)83@ylzlyuc%0^h4otkvn3_ec-znrm*y=rnprk!@^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['daintiest-kudu-1899.dataplicity.io', 'localhost']
-=======
 ALLOWED_HOSTS = [
     'daintiest-kudu-1899.dataplicity.io',
     'localhost',
+    '127.0.0.1',
 ]
->>>>>>> c8e8b3b4fe017f9b149558e619d972ab5b712ad9
 
 
 # Application definition
@@ -49,6 +46,7 @@ INSTALLED_APPS = [
     'apps.rover',
     'apps.login',
     'crispy_forms',
+    'channels',
 ]
 
 MIDDLEWARE = [
