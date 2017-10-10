@@ -14,6 +14,7 @@ def index(request):
             form = ChangePassForm(initial={'username': username})
             context = {
                 "title": "Change Password",
+                "greeting": "Admin Page",
                 "form": form,
             }
             return render(request, 'login/login.html', context)
@@ -23,6 +24,7 @@ def index(request):
             form = LoginForm()
             context = {
                 "title": "Welcome to WatPi",
+                "greeting": "Welcome!",
                 "form": form,
             }
             return render(request, 'login/login.html', context)
@@ -30,6 +32,22 @@ def index(request):
         if request.user.is_authenticated():
             user = User.objects.get(id=request.user.id)
             post = request.POST
+            form = ChangePassForm(post)
+            if form.is_valid():
+                logging.info(form.cleaned_data)
+                user = User.objects.get(username=request.user.username)
+                user.username = form.cleaned_data['new_login']
+                user.set_password(form.cleaned_data['new_pass'])
+                user.save()
+                logging.info(user)
+                return redirect('/dashboard')
+            context = {
+                "title": "WatPi Admin",
+                "greeting": "Admin Page",
+                "form": form,
+            }
+            return render(request, 'login/login.html', context)
+
 
         else:
             post = request.POST
@@ -40,6 +58,7 @@ def index(request):
                 return redirect('/dashboard')
             context = {
                 "title": "Welcome to WatPi",
+                "greeting": "Welcome!",
                 "form": form,
             }
             return render(request, 'login/login.html', context)
