@@ -13,6 +13,18 @@ def index(request):
     context = {'image_sm': 'images/image2.jpg', 
                'image_lg': 'images/image3.jpg',
                'caption': 'Here is your image!', }
+    # Preview to mimic web stream
+    stream_on = True
+    sleep(30)
+    stream_on = False
+
+    while stream_on is True:
+        camera_preview = picamera.PiCamera(resolution=(1024, 768))
+        image = camera_preview.capture('apps/camera/static/images/image_preview.jpg', resize=(320, 240))
+        context = {'image': 'images/image_preview.jpg', }
+        camera.close()
+        return redirect(reverse('camera:index'))
+        
     return render(request, 'camera_index.html', context=context)
 
 
