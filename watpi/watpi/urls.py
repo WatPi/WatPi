@@ -15,14 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
+from django.views.generic import RedirectView
 
 urlpatterns = [
-    # url('^', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^camera/', include('apps.camera.urls', namespace='camera')),
     url(r'^dashboard/', include('apps.dashboard.urls', namespace='dashboard')),
     url(r'^rover/', include('apps.rover.urls', namespace='rover')),
-    url(r'^login/', include('apps.login.urls')),
-    url(r'^logout/$', auth_views.LogoutView.as_view()),
+    url(r'^login/', include('apps.login.urls', namespace='user')),
+    url(r'^$', RedirectView.as_view(url='/dashboard/', permanent=False)),
 ]

@@ -25,11 +25,11 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                    <li><a href=""><span class="glyphicon glyphicon-user"></span> Username</a></li>
-                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <!-- <li><a href=""><span class="glyphicon glyphicon-user"></span> Username</a></li> -->
+                    <li><a href="{% url 'user:logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                     {% else %}
-                    <li><a href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <!-- <li><a href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+                    <li><a href="{% url 'user:login_main' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -55,8 +55,6 @@
     </div>
     {% endblock %}
     {% block footer %}
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-        <!-- <script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"><\/script>')</script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         {% block scripts %} {% endblock %}
