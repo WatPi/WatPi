@@ -10,9 +10,7 @@ import sys
 
 
 def index(request):
-    webcam = start_camera()
-    context = {'response': webcam, 
-               'image': 'images/image2.jpg', 
+    context = {'image': 'images/image2.jpg', 
                'caption': 'Here is your image!', }
     return render(request, 'camera_index.html', context=context)
 
