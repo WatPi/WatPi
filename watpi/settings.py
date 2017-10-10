@@ -25,21 +25,22 @@ SECRET_KEY = 'gx=5st#=_)83@ylzlyuc%0^h4otkvn3_ec-znrm*y=rnprk!@^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['daintiest-kudu-1899.dataplicity.io', u'127.0.0.1', u'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
+
 INSTALLED_APPS = [
+    'channels',
+    'apps.login',
+    'apps.dashboard',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
-    'apps.camera',
-    'apps.dashboard',
-    'apps.rover',
 ]
 
 MIDDLEWARE = [
@@ -57,10 +58,7 @@ ROOT_URLCONF = 'watpi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(__file__), '../watpi/templates/'), 
-                 os.path.join(os.path.dirname(__file__), '../apps/dashboard/templates/dashboard/'),
-                 os.path.join(os.path.dirname(__file__), '../apps/camera/templates/camera/'),
-                 os.path.join(os.path.dirname(__file__), '../apps/rover/templates/rover/'), ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +73,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'watpi.wsgi.application'
 
-FILES_DIR = os.path.abspath(os.path.join(BASE_DIR, '../watpi/templates'))
-
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "watpi.routing.channel_routing",
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -107,13 +109,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -126,8 +129,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-
-# Remove before deploying
-APPEND_SLASH = False
