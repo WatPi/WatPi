@@ -20,8 +20,11 @@ rightMotor = mh.getMotor(4)
 # set the speed to start, from 0 (off) to 255 (max speed)
 leftMotor.setSpeed(150)
 leftMotor.run(Adafruit_MotorHAT.FORWARD)
+rightMotor.setSpeed(150)
+rightMotor.run(Adafruit_MotorHAT.FORWARD)
 # turn on motor
 leftMotor.run(Adafruit_MotorHAT.RELEASE)
+rightMotor.run(Adafruit_MotorHAT.RELEASE)
 
 
 def move_rover(direction):
