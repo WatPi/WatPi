@@ -4,8 +4,8 @@
     {% block title %}<title>WatPi</title>{% endblock %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-    {% load staticfiles %} 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% load staticfiles %}
     {% block css %} {% endblock %}
 </head>
 <body>
@@ -26,10 +26,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
                     <li><a href=""><span class="glyphicon glyphicon-user"></span> Username</a></li>
-                    <li><a href=""><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                     {% else %}
                     <li><a href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -48,7 +48,7 @@
                 {% endblock %}
             </div>
             <div class="col-sm-3">
-                 {% block right_sidebar %} 
+                 {% block right_sidebar %}
                  {% endblock %}
             </div>
         </div>
@@ -59,7 +59,7 @@
         <!-- <script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"><\/script>')</script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        {% block scripts %} {% endblock %} 
+        {% block scripts %} {% endblock %}
     {% endblock %}
 </body>
 </html>
