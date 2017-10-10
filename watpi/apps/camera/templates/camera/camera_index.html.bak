@@ -26,30 +26,15 @@
         </div>
         
         <p><a href="{% url 'camera:take_photo' %}" value="Take a Small Picture" class="btn btn-default">Take a small picture</a></p>
+        
+        <p><a href="{% url 'camera:take_photo' %}" value="Take a Small Picture" class="btn btn-default">Take a small picture</a></p>
 
-        <div class="container">
-            <div class="row top">
-                <div class="col-xs-11">
-                    <h1>camp</h1>
-                    <p>
-                        A webcam server for your Pi.
-                    </p>
-                </div>
-            </div>
+        <p><a href="{% url 'camera:take_lg_photo' %}" value="Take a Large Picture" class="btn btn-default">Take a big picture</a></p>
         
-            <div class="row">
-                <div class="col-xs-12">
-                    <img id="video"></img>
-                </div>
-            </div>
-        </div>
+        <p><a href="{% url 'camera:take_video' %}" value="Take a Video" class="btn btn-default">Take a 10s video</a></p>
         
-        <script src="{% url 'static/scripts/client.js' %}" type="text/javascript"></script>
-        <script type="text/javascript">
-            // Connect a websocket to the server. The port notation is post-
-            // processed server-side according to the config
-            client.connect({{port}});
-        </script>
+        <p><a href="{% url 'camera:start_preview' %}" value="Start Preview" class="btn btn-default">Start Preview</a></p>
+
 
     </div>
 </div>
