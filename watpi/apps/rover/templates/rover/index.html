@@ -1,0 +1,51 @@
+{% extends "base.html" %} 
+
+{% block css %}
+    {% load staticfiles %}
+    <link href="{% static 'rover/css/rover.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    <div class="cable"></div>
+    <div class="controller">
+        <div class="centerBlue">
+            <div class="centerLeft"></div>
+            <div class="centerRight"></div>
+        </div>
+        <div class="centerStart">
+            <div class="SLeft"></div>
+            <div class="SRight"></div>
+        </div>
+        <div class="centerSelect">
+            <div class="SLeft"></div>
+            <div class="SRight"></div>
+        </div>
+
+        <div class="controllerLeft">
+            <div class="circle"></div>
+            <div id='rover' class="crossCenter">
+                <div id="forward" class="crossTop"><a href="{% url 'rover:move' direction='forward' %}"></a></div>
+                <div id="backward" class="crossBottom"><a href="{% url 'rover:move' direction='backward' %}"></a></div>
+                <div id="left" class="crossLeft"><a href="{% url 'rover:move' direction='left' %}"></a></div>
+                <div id="right" class="crossRight"><a href="{% url 'rover:move' direction='right' %}"></a></div>
+                <div class="crossCircle"></div>
+            </div>
+        </div>
+        <div class="controllerRight">
+            <div class="backButton1Center">
+                <div class="cornerLeft1"></div>
+                <div class="cornerRight1"></div>
+            </div>
+            <div class="backButton2Center">
+                <div class="cornerLeft2"></div>
+                <div class="cornerRight2"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src='{% static "rover/js/rover.js" %}'></script>
+{% endblock %}
