@@ -119,6 +119,4 @@ node_modules/
 package-lock.json
 packages/
 Wat-Pi-*.json
-camera_network.bak
-camera-find_label.bak
-detect.bak
+*.bak
