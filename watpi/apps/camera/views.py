@@ -15,18 +15,22 @@ def index(request):
     return render(request, 'camera_index.html', context=context)
 
 
-def snap_photo(request, camera=picamera.PiCamera(resolution=(1024, 768))):
+def snap_photo(request):
+    camera = picamera.PiCamera(resolution=(1024, 768))
     image = camera.capture('apps/camera/static/images/image2.jpg', resize=(320, 240))
     context = {'image': 'images/image2.jpg',
                'caption': 'Here is your image!', }
+    camera.close()
     return redirect(reverse('camera:index'))
 
 
-# def snap_lg_photo(request, camera=picamera.PiCamera(resolution=(1024, 768))):
-#     image = camera.capture('image.jpg', resize=(800, 600))
-#     context = {'image': image,
-#                'caption': 'Here is your smaller image!', }
-#     return redirect(reverse('camera:index'))
+def snap_lg_photo(request):
+    camera = picamera.PiCamera(resolution=(1024, 768))
+    image = camera.capture('image.jpg', resize=(800, 600))
+    context = {'image': image,
+               'caption': 'Here is your smaller image!', }
+    camera.close()
+    return redirect(reverse('camera:index'))
 
 
 # def capture_10s_video(request, camera=picamera.PiCamera(resolution=(1024, 768))):
