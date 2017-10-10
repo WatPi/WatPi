@@ -6,6 +6,7 @@ from django.urls import reverse
 from time import sleep
 from server import *
 import picamera
+import sys
 
 
 def index(request):
