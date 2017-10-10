@@ -5,7 +5,7 @@ import json
 from django.shortcuts import HttpResponse, redirect, render
 
 # rover imports
-from rover import *
+from .rover import *
 
 
 def index(request):
@@ -14,8 +14,8 @@ def index(request):
 
 def move(request, direction):
     move_rover(direction)
-    if direction == 'forward':
-        data = {
-            'direction': direction,
-        }
-        return HttpResponse(json.dumps(data))
+    print direction
+    data = {
+        'direction': direction,
+    }
+    return HttpResponse(json.dumps(data))
