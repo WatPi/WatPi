@@ -18,9 +18,13 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+<<<<<<< HEAD
+    # url(r'^admin/', admin.site.urls),
+=======
     # url('^', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
-    # url(r'^camera/', include('apps.camera.urls', namespace='camera')),
+>>>>>>> c8e8b3b4fe017f9b149558e619d972ab5b712ad9
+    url(r'^camera/', include('apps.camera.urls', namespace='camera')),
     url(r'^dashboard/', include('apps.dashboard.urls', namespace='dashboard')),
     url(r'^rover/', include('apps.rover.urls', namespace='rover')),
     url(r'^login/', include('apps.login.urls')),
