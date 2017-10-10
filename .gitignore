@@ -119,3 +119,4 @@ node_modules/
 package-lock.json
 packages/
 Wat-Pi-*.json
+*.bak
