@@ -12,6 +12,7 @@ import sys
 def index(request):
     context = {'image_sm': 'images/image2.jpg', 
                'image_lg': 'images/image3.jpg',
+               'image_preview': 'images/image_preview.jpg',
                'caption': 'Here is your image!', }
     # Preview to mimic web stream
     stream_on = True
