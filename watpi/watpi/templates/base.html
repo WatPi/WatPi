@@ -26,6 +26,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
                     <!-- <li><a href=""><span class="glyphicon glyphicon-user"></span> Username</a></li> -->
+                    <li><a href="{% url 'user:login_main' %}"><span class="glyphicon glyphicon-wrench"></span> Admin</a></li>
                     <li><a href="{% url 'user:logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                     {% else %}
                     <!-- <li><a href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->

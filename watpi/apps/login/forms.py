@@ -48,10 +48,16 @@ class ChangePassForm(forms.Form):
     )
     helper.form_class = 'form-horizontal'
     helper.form_method = 'POST'
-    helper.form_action = '/login'
-    # helper.add_input(Submit('submit', 'Change Password'))
+    helper.form_action = '/login/'
     def clean(self):
         form_data = self.cleaned_data
+        user = authenticate(username=form_data['old_login'], password=form_data['old_pass'])
+        if user is None:
+            msg = 'Login and password do not match'
+            self.add_error('old_login', msg)
+            self.add_error('old_pass', msg)
+        else:
+            self.cleaned_data['user'] = user
         if form_data.get('new_pass') != form_data.get('confirm_pass'):
             msg = 'Passwords do not match!'
             self.add_error('new_pass', msg)
