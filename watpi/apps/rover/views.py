@@ -19,3 +19,7 @@ def move(request, direction):
         'direction': direction,
     }
     return HttpResponse(json.dumps(data))
+
+def stop(request):
+    stop_rover()
+    print 'stopped'

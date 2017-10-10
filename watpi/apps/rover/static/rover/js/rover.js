@@ -18,6 +18,10 @@ $(function () {
 
     $('#rover').on('vmouseup', function(e){
         console.log('vmouseup, stop')
+        $.ajax({
+            url: "/rover/stop",
+            method: 'get',
+        })
     })
 
 });
