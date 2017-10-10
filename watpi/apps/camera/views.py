@@ -26,20 +26,22 @@ def snap_photo(request):
 
 def snap_lg_photo(request):
     camera = picamera.PiCamera(resolution=(1024, 768))
-    image = camera.capture('image.jpg', resize=(800, 600))
-    context = {'image': image,
+    image = camera.capture('apps/camera/static/images/image2.jpg', resize=(800, 600))
+    context = {'image': 'images/image2.jpg',
                'caption': 'Here is your smaller image!', }
     camera.close()
     return redirect(reverse('camera:index'))
 
 
-# def capture_10s_video(request, camera=picamera.PiCamera(resolution=(1024, 768))):
-#     video = camera.start_recording('video.h264')
-#     sleep(10)
-#     video.stop_recording()
-#     context = {'video': video,
-#                'caption': 'Here is your video clip!', }
-#     return redirect(reverse('camera:index'))
+def capture_10s_video(request):
+    camera = picamera.PiCamera(resolution=(1024, 768))
+    video = camera.start_recording('apps/camera/static/images/video.h264')
+    sleep(10)
+    video.stop_recording()
+    context = {'video': 'images/video.h264',
+               'caption': 'Here is your video clip!', }
+    camera.close()
+    return redirect(reverse('camera:index'))
 
 
 # def video_preview(request, camera=picamera.PiCamera(resolution=(1024, 768))):
