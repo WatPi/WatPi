@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^dashboard/', include('apps.dashboard.urls', namespace='dashboard')),
     url(r'^rover/', include('apps.rover.urls', namespace='rover')),
     url(r'^login/', include('apps.login.urls')),
-    url('^logout/$', auth_views.LogoutView.as_view()),
+    url(r'^logout/$', auth_views.LogoutView.as_view()),
 ]
