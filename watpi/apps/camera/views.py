@@ -10,25 +10,26 @@ import sys
 
 
 def index(request):
-    context = {'image': 'images/image2.jpg', 
+    context = {'image_sm': 'images/image2.jpg', 
+               'image_lg': 'images/image3.jpg',
                'caption': 'Here is your image!', }
     return render(request, 'camera_index.html', context=context)
 
 
 def snap_photo(request):
     camera = picamera.PiCamera(resolution=(1024, 768))
-    image = camera.capture('apps/camera/static/images/image2.jpg', resize=(320, 240))
-    context = {'image': 'images/image2.jpg',
-               'caption': 'Here is your image!', }
+    image = camera.capture('apps/camera/static/images/image_sm.jpg', resize=(320, 240))
+    context = {'image': 'images/image_sm.jpg',
+               'caption': 'Here is your smaller image!', }
     camera.close()
     return redirect(reverse('camera:index'))
 
 
 def snap_lg_photo(request):
     camera = picamera.PiCamera(resolution=(1024, 768))
-    image = camera.capture('apps/camera/static/images/image2.jpg', resize=(800, 600))
-    context = {'image': 'images/image2.jpg',
-               'caption': 'Here is your smaller image!', }
+    image = camera.capture('apps/camera/static/images/image_lg.jpg', resize=(800, 600))
+    context = {'image': 'images/image_lg.jpg',
+               'caption': 'Here is your bigger image!', }
     camera.close()
     return redirect(reverse('camera:index'))
 
@@ -38,9 +39,10 @@ def capture_10s_video(request):
     video = camera.start_recording('apps/camera/static/images/video.h264')
     sleep(10)
     video.stop_recording()
+    sleep(2)
+    camera.close()
     context = {'video': 'images/video.h264',
                'caption': 'Here is your video clip!', }
-    camera.close()
     return redirect(reverse('camera:index'))
 
 

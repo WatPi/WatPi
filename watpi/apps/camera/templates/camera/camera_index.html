@@ -22,7 +22,8 @@
 
         <div class="panel panel-default">
             {{ caption }}
-            <img src="{% static 'images/image2.jpg' %}" alt="Your image">
+            <img src="{% static 'images/image_sm.jpg' %}" alt="Your image">
+            <img src="{% static 'images/image_lg.jpg' %}" alt="Your image">
         </div>
         
         <p><a href="{% url 'camera:take_photo' %}" value="Take a Small Picture" class="btn btn-default">Take a small picture</a></p>
