@@ -81,6 +81,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'watpi.wsgi.application'
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "watpi.routing.channel_routing",
+    },
+}
+
 FILES_DIR = os.path.abspath(os.path.join(BASE_DIR, '../watpi/templates'))
 
 
