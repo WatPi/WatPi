@@ -8,7 +8,7 @@ include/
 pip-selfcheck.json
 
 # Django related 
-# src/<yourproject>/settings/local.py
+# src/watpi/settings/local.py
 # static-cdn/  # any collected static files 
 db.sqlite3
 migrations/
@@ -119,3 +119,4 @@ node_modules/
 package-lock.json
 packages/
 Wat-Pi-*.json
+*.bak
