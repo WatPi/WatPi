@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import HttpResponse, redirect, render
 from django.urls import reverse
 from time import sleep
-from server import *
+
 import picamera
 import sys
 
