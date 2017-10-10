@@ -2,21 +2,24 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import HttpResponse, redirect, render
+from django.urls import reverse
 from time import sleep
 import picamera
 
 
 def index(request):
-    response = "Placeholder to verify camera app creation."
-    return HttpResponse(response)
-
-
-def snap_photo(request):
-    camera = picamera.PiCamera(resolution=(1024, 768))
-    image = camera.capture('image.jpg', resize=(320, 240))
-    context = {'image': image,
+    response = "Placeholder to verify rover app creation."
+    context = {'response': response, 
+               'image': 'images/image2.jpg', 
                'caption': 'Here is your image!', }
     return render(request, 'camera_index.html', context=context)
+
+
+def snap_photo(request, camera=picamera.PiCamera(resolution=(1024, 768))):
+    image = camera.capture('apps/camera/static/images/image2.jpg', resize=(320, 240))
+    context = {'image': 'images/image2.jpg',
+               'caption': 'Here is your image!', }
+    return redirect(reverse('camera:index'))
 
 
 def snap_lg_photo(request):

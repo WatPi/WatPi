@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'daintiest-kudu-1899.dataplicity.io',
     'localhost',
+    '127.0.0.1',
 ]
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'apps.rover',
     'apps.login',
     'crispy_forms',
+    'channels',
 ]
 
 MIDDLEWARE = [
