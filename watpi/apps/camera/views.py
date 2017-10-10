@@ -38,8 +38,7 @@ def capture_10s_video(request):
     camera = picamera.PiCamera(resolution=(1024, 768))
     video = camera.start_recording('apps/camera/static/images/video.h264')
     sleep(10)
-    video.stop_recording()
-    sleep(2)
+    camera.stop_recording()
     camera.close()
     context = {'video': 'images/video.h264',
                'caption': 'Here is your video clip!', }
