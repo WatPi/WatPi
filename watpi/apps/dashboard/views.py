@@ -16,7 +16,7 @@ from .rover import *
 
 # picamera imports
 # TODO:
-import picamera
+# import picamera
 
 
 @login_required(login_url='/login')
@@ -44,6 +44,7 @@ def rover_stop(request):
 
 
 # +++++++++++++++ picamera view section +++++++++++++++
+# TODO: do we need this?????
 # def snap_photo(request):
 #     pass
 #     camera = picamera.PiCamera(resolution=(1024, 768))
@@ -86,6 +87,7 @@ def take_photo(request):
 
 
 # def capture_10s_video(request):
+# TODO do we need???????
 #     pass
 #     camera = picamera.PiCamera(resolution=(1024, 768))
 #     video = camera.start_recording('apps/camera/static/images/video.h264')
