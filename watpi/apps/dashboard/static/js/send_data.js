@@ -1,4 +1,6 @@
 function getBase64Image(img) {
+    // Code from Matthew Crumley, as shown in:
+    // https://stackoverflow.com/questions/934012/
     // Create an empty canvas element
     var canvas = document.createElement("canvas");
     canvas.width = img.width;
@@ -20,11 +22,7 @@ $(document).ready(function() {
   var socket = new WebSocket("ws://" + window.location.host + "/dashboard/");
   $('#left-side').click(function(event) {
     event.preventDefault();
-    var src1 = '/static/images/dashboard/group_selfie.jpg';
-    var src2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
-    var imgtag = '<img src="' + src1 + '>"';
     var img = getBase64Image($('#store')[0]);
-    console.log($('#store'))
     var sendIt = JSON.stringify({
       "text": {
         "image": img,
@@ -35,10 +33,9 @@ $(document).ready(function() {
   socket.onmessage = function(event) {
     var text = JSON.parse(event.data).text;
     if(text){
-      var src = "iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==";
       var img = $('<img />').attr('src', 'data:image/png;base64,' + text.image);
       console.log(text);
     }
-    $('#emit').append(img);
+    $('#emit').html(img);
   }
 })
