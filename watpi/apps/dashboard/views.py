@@ -2,21 +2,24 @@
 from __future__ import unicode_literals
 
 import sys
+import os
 import json
 from time import sleep
 from django.urls import reverse
+from django.utils import timezone
 from django.shortcuts import HttpResponse, redirect, render
 from django.contrib.auth.decorators import login_required
+from .models import *
 
 # rover imports
 from .rover import *
 
 # picamera imports
 # TODO:
-import picamera
+# import picamera
 
-# TODO: can we use this??
-# @login_required(login_url='/')
+
+@login_required(login_url='/login')
 def index(request):
     return render(request, 'index.html', context=None)
 
@@ -52,14 +55,30 @@ def rover_stop(request):
 
 
 def take_photo(request):
-    camera = picamera.PiCamera(resolution=(1024, 768))
-    image = camera.capture(
-        'apps/dashboard/static/images/image_lg.jpg', resize=(800, 600))
+    number_of_photos_stored = count(Photo.objects.all())
+    new_name = 'img_' + str(timezone.now())[:26] + '.jpg'
+    new_time_created = timezone.now()
+    addr = 'apps/dashboard/static/images/' + new_name
+    if number_of_photos_stored == 10:
+        # rewrite the oldest photo, cap the number of photos at 10
+        photo_to_rw = Photo.objects.oder_by('time_created').first()
+        photo_to_delete = photo_to_rw.name
+        path_to_delete = 'apps/dashboard/static/images/' + photo_to_delete
+        os.remove(path_to_delete) 
+
+        photo_to_rw.update(time_created=new_time_created, name=new_name)
+
+    else:
+        Photo.objects.create(name=new_name, time_created=new_time_created)
+
+    # camera = picamera.PiCamera(resolution=(1024, 768))
+    # image = camera.capture(addr, resize=(800, 600))
+    # camera.close()
+
     data = {
-        # 'image': '/static/images/group_selfie.jpg',
-        'image': 'static/images/image_lg.jpg',
+        'image': addr[15:],
     }
-    camera.close()
+
     return HttpResponse(json.dumps(data))
 
 
