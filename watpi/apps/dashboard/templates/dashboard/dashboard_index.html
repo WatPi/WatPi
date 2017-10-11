@@ -6,9 +6,11 @@
 {% endblock %}
 
 {% block left_sidebar %}
-<div class="panel panel-default">
+<div id="left-side" class="panel panel-default">
     <div class="panel panel-header">
         <h5>Left Sidebar</h5>
+        {% load staticfiles %}
+        <img id="grpslf" src="{% static 'images/dashboard/group_selfie.jpg' %}">
     </div>
     <div class="panel panel-body">
     </div>
@@ -31,11 +33,14 @@
         <h5>Right Sidebar</h5>
     </div>
     <div class="panel panel-body">
+      <img id="video"></img>
+      <div id="emit"></div>
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
 {% load staticfiles %}
-  <!-- <script src="{% static 'js/test.js' %}"></script> -->
+  <!-- <script src="{% static 'js/client.js' %}"></script> -->
+  <script src="{% static 'js/send_data.js' %}"></script>
 {% endblock %}
