@@ -9,7 +9,7 @@ from .rover import *
 
 
 def index(request):
-    return render(request, 'rover_index.html', context=None)
+    return render(request, 'index.html', context=None)
 
 
 def move(request, direction):

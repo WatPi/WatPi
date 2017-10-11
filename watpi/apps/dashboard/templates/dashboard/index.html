@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    {% load staticfiles %}
+    <link href="{% static 'dashboard/css/dashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'dashboard/css/gameController.css' %}" rel="stylesheet"> 
+{% endblock %}
+
+{% block main %}
+<section>
+    <div id="photo_frame">
+        <!-- <img src="{% static 'images/group_selfie.jpg' %}" alt="Your image"> -->
+    </div>
+    <div id="caption">
+    </div>
+</section>
+
+<section>
+    <div class="cable"></div>
+
+    <div class="controller">
+        <div class="centerBlue">
+            <div class="centerLeft"></div>
+            <div class="centerRight"></div>
+        </div>
+        <div class="centerStart">
+            <div class="SLeft"></div>
+            <div class="SRight"></div>
+        </div>
+        <div class="centerSelect">
+            <div class="SLeft"></div>
+            <div class="SRight"></div>
+        </div>
+
+        <div class="controllerLeft">
+            <div class="circle"></div>
+            <div id='rover' class="crossCenter">
+                <div id="forward" class="crossTop"><a href="{% url 'dashboard:rover_move' direction='forward' %}"></a></div>
+                <div id="backward" class="crossBottom"><a href="{% url 'dashboard:rover_move' direction='backward' %}"></a></div>
+                <div id="left" class="crossLeft"><a href="{% url 'dashboard:rover_move' direction='left' %}"></a></div>
+                <div id="right" class="crossRight"><a href="{% url 'dashboard:rover_move' direction='right' %}"></a></div>
+                <div class="crossCircle"></div>
+            </div>
+        </div>
+
+        <div class="controllerRight">
+            <div class="backButton1Center">
+                <div class="cornerLeft1">
+                    <a href="{% url 'dashboard:take_lg_photo' %}"><span class="glyphicon glyphicon-camera"></span></a>
+                </div>
+                <div class="cornerRight1"></div>
+            </div>
+            <div class="backButton2Center">
+                <div class="cornerLeft2"></div>
+                <div class="cornerRight2">
+                    <a href="{% url 'user:logout' %}"><span class="glyphicon glyphicon-log-out"></span></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+    <!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static 'dashboard/js/dashboard.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dashboard/js/rover.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dashboard/js/picamera.js' %}"></script>
+    <script src="{% static 'dashboard/js/test.js' %}"></script>
+{% endblock %}
+
