@@ -13,3 +13,8 @@ class Photo(models.Model):
     def __str__(self):
         return self.name
 
+    def update(self):
+        self.name = 'img_' + str(timezone.now())[:26] + '.jpg'
+        self.time_created = timezone.now()
+        self.save()
+

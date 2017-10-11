@@ -16,7 +16,7 @@ from .rover import *
 
 # picamera imports
 # TODO:
-# import picamera
+import picamera
 
 
 @login_required(login_url='/login')
@@ -55,29 +55,32 @@ def rover_stop(request):
 
 
 def take_photo(request):
-    number_of_photos_stored = count(Photo.objects.all())
+    number_of_photos_stored = Photo.objects.all().count()
     new_name = 'img_' + str(timezone.now())[:26] + '.jpg'
     new_time_created = timezone.now()
     addr = 'apps/dashboard/static/images/' + new_name
+
     if number_of_photos_stored == 10:
         # rewrite the oldest photo, cap the number of photos at 10
-        photo_to_rw = Photo.objects.oder_by('time_created').first()
+        photo_to_rw = Photo.objects.order_by('time_created').first()
         photo_to_delete = photo_to_rw.name
         path_to_delete = 'apps/dashboard/static/images/' + photo_to_delete
         os.remove(path_to_delete) 
 
-        photo_to_rw.update(time_created=new_time_created, name=new_name)
+        photo_to_rw.update()
 
     else:
         Photo.objects.create(name=new_name, time_created=new_time_created)
 
-    # camera = picamera.PiCamera(resolution=(1024, 768))
-    # image = camera.capture(addr, resize=(800, 600))
-    # camera.close()
+    camera = picamera.PiCamera(resolution=(1024, 768))
+    image = camera.capture(addr, resize=(800, 600))
+    camera.close()
 
     data = {
         'image': addr[15:],
     }
+
+    print(data)
 
     return HttpResponse(json.dumps(data))
 
