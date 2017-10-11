@@ -37,10 +37,10 @@ def move_rover(direction):
     elif direction == 'backward':
         leftMotor.run(Adafruit_MotorHAT.BACKWARD)
         rightMotor.run(Adafruit_MotorHAT.BACKWARD)
-    elif direction == 'left':
+    elif direction == 'right':
         leftMotor.run(Adafruit_MotorHAT.RELEASE)
         rightMotor.run(Adafruit_MotorHAT.FORWARD)
-    elif direction == 'right':
+    elif direction == 'left':
         leftMotor.run(Adafruit_MotorHAT.FORWARD)
         rightMotor.run(Adafruit_MotorHAT.RELEASE)
 
