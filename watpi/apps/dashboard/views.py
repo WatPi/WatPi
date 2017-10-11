@@ -57,7 +57,7 @@ def take_photo(request):
         'apps/camera/static/images/image_lg.jpg', resize=(800, 600))
     data = {
         # 'image': '/static/images/group_selfie.jpg',
-        'image': '/static/images/image_lg.jpg',
+        'image': 'static/images/image_lg.jpg',
     }
     camera.close()
     return HttpResponse(json.dumps(data))

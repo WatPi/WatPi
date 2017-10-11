@@ -8,7 +8,7 @@ $(function () {
             method: 'get',
             success: function (response) {
                 img_url = JSON.parse(response)['image'];
-                img_to_show = "<img src='" + img_url + "'/>";
+                img_to_show = "<img src='/" + img_url + "'/>";
                 $('#photo_frame').children().remove();
                 $('#photo_frame').append(img_to_show);
             }
