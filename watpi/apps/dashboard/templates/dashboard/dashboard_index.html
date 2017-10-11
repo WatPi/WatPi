@@ -9,10 +9,12 @@
 <div id="left-side" class="panel panel-default">
     <div class="panel panel-header">
         <h5>Left Sidebar</h5>
-        {% load staticfiles %}
-        <img id="grpslf" src="{% static 'images/dashboard/group_selfie.jpg' %}">
     </div>
     <div class="panel panel-body">
+      <div id="storediv" display="none">
+        {% load staticfiles %}
+        <img id="store" src="{% static 'images/dashboard/camel.jpg' %}" alt="">
+      </div>
     </div>
 </div>
 {% endblock %}

@@ -20,33 +20,36 @@ $(document).ready(function() {
   var socket = new WebSocket("ws://" + window.location.host + "/dashboard/");
   $('#left-side').click(function(event) {
     event.preventDefault();
-    // var filename = '../images/dashboard/group_selfie.jpg';
-    // var img = $('<img />').attr('src', '../images/dashboard/group_selfie.jpg');
-    // var img = "nothing here";
-    var img = getBase64Image($('#grpslf'));
-    // img = fetch($('#grpslf'))
-    //   .then(function(response){
-    //     return response.blob();
-    //   })
-    console.log(img);
+    var src1 = '/static/images/dashboard/group_selfie.jpg';
+    var src2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+    var imgtag = '<img src="' + src1 + '>"';
+    // $imgsrc = $('<img />').attr('src', src2)
+    // $(imgtag).on('load',  function() {
+    // });
+    // console.log(this)
+    // console.log($(this))
+    var img = getBase64Image($('#store')[0]);
+    console.log($('#store'))
+    // var img = "iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
     var sendIt = JSON.stringify({
       "text": {
         "image": img,
       }
     });
     socket.send(sendIt);
+    // imgtag.attr('height', 200);
   });
   socket.onmessage = function(event) {
     var text = JSON.parse(event.data).text;
     if(text){
-      var out = {
-        "image": text.image,
-      }
-      var outText = "<p>You emitted the following information to the server: ";
-      outText += "</p>";
-      console.log(out);
+      var src = "iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==";
+      var img = $('<img />').attr('src', 'data:image/png;base64,' + text.image);
+      console.log(text);
+      // var outText = "<p>You emitted the following information to the server: ";
+      // outText += "</p>";
+      // console.log(out);
       // outText += JSON.stringify(out) + "</p>";
     }
-    $('#emit').html(outText);
+    $('#emit').append(img);
   }
 })
