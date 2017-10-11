@@ -54,7 +54,7 @@ def rover_stop(request):
 def take_photo(request):
     camera = picamera.PiCamera(resolution=(1024, 768))
     image = camera.capture(
-        'apps/camera/static/images/image_lg.jpg', resize=(800, 600))
+        'apps/dashboard/static/images/image_lg.jpg', resize=(800, 600))
     data = {
         # 'image': '/static/images/group_selfie.jpg',
         'image': 'static/images/image_lg.jpg',
