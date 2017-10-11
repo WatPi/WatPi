@@ -11,7 +11,7 @@
         <h5>Left Sidebar</h5>
     </div>
     <div class="panel panel-body">
-      <div id="storediv" display="none">
+      <div id="storediv">
         {% load staticfiles %}
         <img id="store" src="{% static 'images/dashboard/camel.jpg' %}" alt="">
       </div>
@@ -42,7 +42,46 @@
 {% endblock %}
 
 {% block scripts %}
-{% load staticfiles %}
-  <!-- <script src="{% static 'js/client.js' %}"></script> -->
-  <script src="{% static 'js/send_data.js' %}"></script>
+<script>
+function getBase64Image(img) {
+  // Create an empty canvas element
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  // Copy the image contents to the canvas
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+
+  // Get the data-URL formatted image
+  // Firefox supports PNG and JPEG. You could check img.src to guess the
+  // original format, but be aware the using "image/jpg" will re-encode the image.
+  var dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+$(document).ready(function() {
+  var socket = new WebSocket("ws://" + window.location.host + "/dashboard/");
+  $('#left-side').click(function(event) {
+    event.preventDefault();
+    // var img = getBase64Image($('#store')[0]);
+    var sendIt = JSON.stringify({
+      "text": {
+        "imgnum": 1,
+        // "image": img,
+      }
+    });
+    socket.send(sendIt);
+  });
+  socket.onmessage = function(event) {
+    var text = JSON.parse(event.data);
+    console.log(text)
+    if(text){
+      var img = $('<img />').attr('src', 'data:image/png;base64,' + text.image).attr('height', '200');
+      $('#emit').html(img);
+    }
+  }
+})
+</script>
 {% endblock %}
