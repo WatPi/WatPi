@@ -1,10 +1,11 @@
 $(function () {
-    console.log("$ ready!");
+    console.log("$ ready from rover.js!");
 
     $('#rover').on('mousedown', function (e) {
         let direction = e.target.id,
             data_to_django = JSON.stringify({ 'direction': direction });
-        console.log(e.target)
+        console.log(e.target);
+        console.log($("#" + direction).find('a').attr('href'));
         $.ajax({
             url: $("#" + direction).find('a').attr('href'),
             method: 'get',
@@ -22,5 +23,6 @@ $(function () {
             method: 'get',
         })
     })
+    
 
 });

@@ -13,7 +13,7 @@ from .rover import *
 
 # picamera imports
 # TODO:
-# import picamera
+import picamera
 
 # TODO: can we use this??
 # @login_required(login_url='/')
@@ -41,8 +41,8 @@ def rover_stop(request):
 
 
 # +++++++++++++++ picamera view section +++++++++++++++
-def snap_photo(request):
-    pass
+# def snap_photo(request):
+#     pass
 #     camera = picamera.PiCamera(resolution=(1024, 768))
 #     image = camera.capture(
 #         'apps/camera/static/images/image_sm.jpg', resize=(320, 240))
@@ -51,18 +51,20 @@ def snap_photo(request):
 #     return redirect(reverse('dashboard:index'))
 
 
-def snap_lg_photo(request):
-    # camera = picamera.PiCamera(resolution=(1024, 768))
-    # image = camera.capture(
-    #     'apps/camera/static/images/image_lg.jpg', resize=(800, 600))
-    context = {'image': 'static/images/group_selfie.jpg', }
-    # camera.close()
-    return HttpResponse(json.dumps(context))
-    # return redirect('dashboard:index')
+def take_photo(request):
+    camera = picamera.PiCamera(resolution=(1024, 768))
+    image = camera.capture(
+        'apps/camera/static/images/image_lg.jpg', resize=(800, 600))
+    data = {
+        # 'image': '/static/images/group_selfie.jpg',
+        'image': '/static/images/image_lg.jpg',
+    }
+    camera.close()
+    return HttpResponse(json.dumps(data))
 
 
-def capture_10s_video(request):
-    pass
+# def capture_10s_video(request):
+#     pass
 #     camera = picamera.PiCamera(resolution=(1024, 768))
 #     video = camera.start_recording('apps/camera/static/images/video.h264')
 #     sleep(10)

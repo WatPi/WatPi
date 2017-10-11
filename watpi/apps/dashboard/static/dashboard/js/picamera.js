@@ -1,20 +1,18 @@
 $(function () {
     console.log('$ ready from picamera.js')
 
-    $('.cornerLeft1').on('click', 'a', function (e){
-        console.log('this href', $(this).attr('href'));
+    $('#take_photo').on('click', function (e){
+        let img_url = "", img_to_show = "";
         $.ajax({
-            url: $(this).attr('href'),
+            url: $(this).find('a').attr('href'),
             method: 'get',
             success: function (response) {
-                console.log('response:', JSON.parse(response))
-                let img_url = JSON.parse(response)['image'];
-                let img_to_show = "<img src='" + img_url + "'/>";
-                console.log(img_to_show);
+                img_url = JSON.parse(response)['image'];
+                img_to_show = "<img src='" + img_url + "'/>";
+                $('#photo_frame').children().remove();
                 $('#photo_frame').append(img_to_show);
             }
         });
     })
-    
 
 });
