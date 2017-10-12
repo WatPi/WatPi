@@ -4,14 +4,19 @@ from django.contrib.auth import authenticate
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit
 
+
 class LoginForm(forms.Form):
     username = forms.CharField(label="Username:", max_length=45)
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}),label="Password:", max_length=255, min_length=8)
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}),
+                               label="Password:", 
+                               max_length=255, min_length=8)
+
     helper = FormHelper()
     helper.form_class = 'form-horizontal'
     helper.form_method = 'POST'
     helper.form_action = '/login/'
-    helper.add_input(Submit('submit', 'Login'))
+    helper.add_input(Submit('submit', 'GO!'))
+
     def clean(self):
         form_data = self.cleaned_data
         print form_data['username'], form_data['password']
@@ -23,35 +28,46 @@ class LoginForm(forms.Form):
             self.add_error('password', msg)
         return form_data
 
+
 class ChangePassForm(forms.Form):
-    old_login = forms.CharField(label="Old username:", max_length=45, min_length=2)
-    old_pass = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Old password'}),label="Old Password:", max_length=258, min_length=8)
-    new_login = forms.CharField(label="New username:", max_length=45, min_length=2)
-    new_pass = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'New password'}),label="Password:", max_length=258, min_length=8)
-    confirm_pass = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm new password'}),label="Confirm pw:", max_length=255, min_length=8)
+    old_login = forms.CharField(label="Old Username:",
+                                max_length=45, min_length=2)
+    old_pass = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'old password'}),
+                               label="Old Password:",
+                               max_length=258, min_length=8)
+    new_login = forms.CharField(label="New Username:",
+                                max_length=45, min_length=2)
+    new_pass = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'new password'}),
+                               label="Password:", 
+                               max_length=258, min_length=8)
+    confirm_pass = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'confirm'}),
+                                   label="Confirm Password:", max_length=255, min_length=8)
+                                   
     helper = FormHelper()
     helper.layout = Layout(
         Fieldset(
-            'Enter current username and password',
+            'Current Info',
             'old_login',
             'old_pass',
         ),
         Fieldset(
-            'Enter new username and password',
+            'Update Info',
             'new_login',
             'new_pass',
             'confirm_pass',
         ),
         ButtonHolder(
-            Submit('submit', 'Change Password'),
+            Submit('submit', 'GO!'),
         )
     )
     helper.form_class = 'form-horizontal'
     helper.form_method = 'POST'
     helper.form_action = '/login/'
+
     def clean(self):
         form_data = self.cleaned_data
-        user = authenticate(username=form_data['old_login'], password=form_data['old_pass'])
+        user = authenticate(username=form_data['old_login'],
+                            password=form_data['old_pass'])
         if user is None:
             msg = 'Login and password do not match'
             self.add_error('old_login', msg)

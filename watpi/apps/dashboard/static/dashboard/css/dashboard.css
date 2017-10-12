@@ -1,0 +1,23 @@
+#photo_frame img {
+    height: 100%;
+    width: 100%;
+}
+
+#photo_frame {
+    height: 240px;
+    width: 320px;
+    margin-top: 3rem;
+    border: 7px solid #fffff9;
+    border-radius: 3px 3px 0 0;
+    background-image: url(https://goo.gl/E6auCt);
+    background-position: center; 
+    background-size: 100%;
+}
+
+#caption {
+    height: 100px;
+    width: 320px;
+    background-color: #fffff9;
+    border: 7px solid #fffff9;
+    border-radius: 0 0 3px 3px;
+}
