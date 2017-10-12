@@ -58,6 +58,7 @@ def rover_stop(request):
 def take_photo(request):
     number_of_photos_stored = Photo.objects.all().count()
     new_name = 'img_' + str(timezone.now())[:26] + '.jpg'
+    new_name.replace(' ', '_')
     new_time_created = timezone.now()
     addr = 'apps/dashboard/static/images/' + new_name
 
@@ -79,7 +80,7 @@ def take_photo(request):
 
     data = {
         'img_url': addr[15:],
-        'img_path_to_save': addr,
+        # 'img_path_to_save': addr,
         'filename': new_name,
     }
 
