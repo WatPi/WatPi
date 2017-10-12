@@ -17,7 +17,7 @@ from ..gallery.consumers import *
 
 # picamera imports
 # TODO:
-# import picamera
+import picamera
 
 
 @login_required(login_url='/login')
@@ -78,8 +78,6 @@ def take_photo(request):
     camera = picamera.PiCamera(resolution=(1024, 768))
     image = camera.capture(addr, resize=(800, 600))
     camera.close()
-
-    # ws_message(message=None)
 
     data = {
         'img_url': addr[15:],

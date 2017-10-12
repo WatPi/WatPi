@@ -12,7 +12,6 @@ def ws_message(message):
     logging.info(len(message.content['text']))
     print os.getcwd()
 
-    # TODO: change path
     lasted_photo_name = Photo.objects.order_by('-time_created').first().name
     latest_photo_path = 'apps/dashboard/static/dashboard/images/' + lasted_photo_name
 
@@ -25,3 +24,5 @@ def ws_message(message):
     Group("dash").send({
         "text": out_msg,
     })
+
+    # TODO: out_msg????
