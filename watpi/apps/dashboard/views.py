@@ -78,7 +78,8 @@ def take_photo(request):
     camera.close()
 
     data = {
-        'image_path': addr[15:],
+        'img_url': addr[15:],
+        'img_path_to_save': addr,
         'filename': new_name,
     }
 
