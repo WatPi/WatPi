@@ -3,6 +3,18 @@
 {% block header %}
 {% endblock %}
 
+{% block GoogleDrive %}
+    <link rel="canonical" href="127.0.0.1:8000">
+    <script>
+        window.___gcfg = {
+            parsetags: 'explicit'
+        };
+    </script>
+    <script src="https://apis.google.com/js/platform.js" async defer>
+        { parsetags: 'explicit' }
+    </script>
+{% endblock %}
+
 {% block css %} 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     {% load staticfiles %}
@@ -12,10 +24,10 @@
 
 {% block main %}
 <section>
-    <div id="photo_frame">
-        <!-- <img src="{% static 'images/group_selfie.jpg' %}" alt="Your image"> -->
-    </div>
+    <div id="photo_frame"></div>
     <div id="caption">
+        {% load static %}
+        <div id="savetodrive-div"></div>
     </div>
 </section>
 
@@ -50,15 +62,24 @@
         <div class="controllerRight">
             <div class="backButton1Center">
                 <div class="cornerLeft1">
-                    <span id="take_photo" class="glyphicon glyphicon-camera">
+                    <span id="take_photo"
+                    class="glyphicon glyphicon-camera">
                         <a href="{% url 'dashboard:take_photo' %}">
                         </a>
                     </span>
                 </div>
-                <div class="cornerRight1"></div>
+                <div class="cornerRight1">
+                    <a href="{% url 'user:login_main' %}">
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </a>
+                </div>
             </div>
             <div class="backButton2Center">
-                <div class="cornerLeft2"></div>
+                <div class="cornerLeft2">
+                    <a href="{% url 'user:login_main' %}">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </a>
+                </div>
                 <div class="cornerRight2">
                     <a href="{% url 'user:logout' %}"><span class="glyphicon glyphicon-log-out"></span></a>
                 </div>
