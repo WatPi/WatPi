@@ -30,10 +30,10 @@ class LoginForm(forms.Form):
 
 
 class ChangePassForm(forms.Form):
-    old_login = forms.CharField(label="Old username:",
+    old_login = forms.CharField(label="Old Username:",
                                 max_length=45, min_length=2)
-    old_pass = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Old password'}),
-                               label="old Password:",
+    old_pass = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'old password'}),
+                               label="Old Password:",
                                max_length=258, min_length=8)
     new_login = forms.CharField(label="New username:",
                                 max_length=45, min_length=2)
