@@ -3,7 +3,10 @@
     /* box-sizing: border-box; */
     margin: 0;
     padding: 0;
+    color: white;
 }
+
+/* +++++++++++ robot design is from Aleks https://codepen.io/achudars/pen/sLIef?page=1& ++++++++++ */
 
 body {
   background: #FF847C;
@@ -14,7 +17,7 @@ body {
   width: 300px;
   position: absolute;
   left: 50%;
-  top: 60%;
+  top: 30%;
   margin-left: -150px;
   margin-top: -200px;
 }
@@ -50,7 +53,7 @@ body {
   top: 240px;
   left: 10px;
   width: 280px;
-  height: 20px;
+  /* height: 5vh; */
   background: #162736;
 }
 #le {
@@ -110,15 +113,15 @@ body {
 #leg-1 {
   display: inline-block;
   position: relative;
-  top: 60px;
-  /* left: 10px; */
-  width: 100px;
+  top: 0;
+  left: -180px;
+  width: 20vh;
   height: 20px;
   background: #162736;
-  transform: rotate(60deg);
-  -ms-transform: rotate(60deg);
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   /* IE 9 */
-  -webkit-transform: rotate(60deg);
+  -webkit-transform: rotate(180deg);
   /* Safari and Chrome */
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -126,55 +129,55 @@ body {
 #leg-2 {
   display: inline-block;
   position: relative;
-  top: 60px;
-  /* left: 10px; */
-  width: 100px;
+  top: 0;
+  left: 180px;
+  width: 20vh;
   height: 20px;
   background: #162736;
-  transform: rotate(-60deg);
-  -ms-transform: rotate(-60deg);
+  transform: rotate(-180deg);
+  -ms-transform: rotate(180deg);
   /* IE 9 */
-  -webkit-transform: rotate(-60deg);
+  -webkit-transform: rotate(-180deg);
   /* Safari and Chrome */
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
 
+/* ++++++++ form styling ++++++++ */
 
-body {
-    /* background-color: blue; */
-    /* background-image: url('Rover-sketch.png');
-    background-position: -17% 5%; 
-    background-size: cover;
-    background-repeat: no-repeat; */
-}
-
-/* .hero_img {
+legend {
     display: block;
-    width: 50%;
-    margin: auto;
-} */
-
-main {
-    position: fixed;
-    right: 0;
-    /* margin: auto; */
-    /* margin-top: 30vh; */
-    height: 100vh;
-    width: 30vw;
-    background-color: #383232;
-    /* opacity: 0.5; */
-    /* background-image: url('Rover-sketch.png');
-    background-position: 5% 5%; 
-    background-size: cover;
-    background-repeat: no-repeat; */
-    /* filter: blur(5px); */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
+    font-size: 2rem;
+    line-height: inherit;
+    border: 0;
+    /* border: 1px solid #e5e5e5; */
+    color: #f7e7e6;
 }
 
-.form_content {
-    z-index: 0;
-    opacity: 1;
+fieldset {
+    margin: 1.2rem auto;
 }
+
+input {
+    border: none;
+    border-radius: 4px;
+    height: 4rem;
+    width: 80%;
+    color: #162736;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+input[type=submit] {
+    margin: 15px auto;
+    background-color: #02ff90;
+}
+
+
+
 
 footer {
     position: fixed;
@@ -188,6 +191,6 @@ footer {
     display: block;
     height: 3rem;
     position: fixed;
-    right: 0;
-    bottom: 0;
+    right: 2px;
+    bottom: 2px;
 }

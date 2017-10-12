@@ -25,20 +25,13 @@
     <div id="mouth"></div>
     <span id="rc"></span>
   </div>
-  <div id="foot"></div>
+  <div id="foot">
+    {% crispy form %}
+  </div>
   <div id="leg-1"></div>
   <div id="leg-2"></div>
 </div>
-<!-- <main>
-  <section class="form_content">
-    <!-- <img class='hero_img' src="https://goo.gl/4hsBSz" alt="rover"> -->
-    {% crispy form %}
-  </section> -->
 
-
-
-
-</main>
 {% endblock %}
 
 {% block footer %}
