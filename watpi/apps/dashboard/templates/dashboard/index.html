@@ -3,6 +3,18 @@
 {% block header %}
 {% endblock %}
 
+{% block GoogleDrive %}
+    <link rel="canonical" href="127.0.0.1:8000">
+    <script>
+        window.___gcfg = {
+            parsetags: 'explicit'
+        };
+    </script>
+    <script src="https://apis.google.com/js/platform.js" async defer>
+        { parsetags: 'explicit' }
+    </script>
+{% endblock %}
+
 {% block css %} 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     {% load staticfiles %}
@@ -13,7 +25,9 @@
 {% block main %}
 <section>
     <div id="photo_frame"></div>
-    <div id="caption"></div>
+    <div id="caption">
+        <div id="savetodrive-div"></div>
+    </div>
 </section>
 
 <section>
@@ -47,7 +61,8 @@
         <div class="controllerRight">
             <div class="backButton1Center">
                 <div class="cornerLeft1">
-                    <span id="take_photo" class="glyphicon glyphicon-camera">
+                    <span id="take_photo"
+                    class="glyphicon glyphicon-camera">
                         <a href="{% url 'dashboard:take_photo' %}">
                         </a>
                     </span>

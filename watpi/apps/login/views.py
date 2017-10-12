@@ -15,7 +15,6 @@ def index(request):
             form = ChangePassForm(initial={'username': username})
             context = {
                 "title": "WatPi | Change Password",
-                "greeting": "Admin Page",
                 "form": form,
             }
             return render(request, 'login/login.html', context)
@@ -25,7 +24,6 @@ def index(request):
             form = LoginForm()
             context = {
                 "title": "Welcome to WatPi",
-                # "greeting": "Welcome!",
                 "form": form,
             }
             return render(request, 'login/login.html', context)
@@ -44,7 +42,6 @@ def index(request):
                 return redirect('/dashboard')
             context = {
                 "title": "WatPi Admin",
-                "greeting": "Admin Page",
                 "form": form,
             }
             return render(request, 'login/login.html', context)
@@ -59,7 +56,6 @@ def index(request):
                 return redirect('/dashboard')
             context = {
                 "title": "Welcome to WatPi",
-                "greeting": "Welcome!",
                 "form": form,
             }
             return render(request, 'login/login.html', context)

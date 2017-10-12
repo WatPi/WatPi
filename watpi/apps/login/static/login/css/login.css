@@ -187,6 +187,7 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #02ff90;
     transform: scale(1.1, 1.1);
+    box-shadow: 5px 10px 5px rgba(0,0,0,0.6);
 }
 
 .control-group {

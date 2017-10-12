@@ -16,7 +16,7 @@ from .rover import *
 
 # picamera imports
 # TODO:
-# import picamera
+import picamera
 
 
 @login_required(login_url='/login')
@@ -78,7 +78,8 @@ def take_photo(request):
     camera.close()
 
     data = {
-        'image': addr[15:],
+        'image_path': addr[15:],
+        'filename': new_name,
     }
 
     print(data)
