@@ -69,8 +69,8 @@
                     </span>
                 </div>
                 <div class="cornerRight1">
-                    <a href="{% url 'user:login_main' %}">
-                        <span class="glyphicon glyphicon-picture"></span>
+                    <a href="{% url 'gallery:index' %}">
+                        <span id="gallery" class="glyphicon glyphicon-picture"></span>
                     </a>
                 </div>
             </div>
@@ -98,6 +98,5 @@
     <script type="text/javascript" src="{% static 'dashboard/js/dashboard.js' %}"></script>
     <script type="text/javascript" src="{% static 'dashboard/js/rover.js' %}"></script>
     <script type="text/javascript" src="{% static 'dashboard/js/picamera.js' %}"></script>
-    <script src="{% static 'dashboard/js/test.js' %}"></script>
 {% endblock %}
 

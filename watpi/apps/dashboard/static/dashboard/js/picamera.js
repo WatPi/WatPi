@@ -10,7 +10,20 @@ function renderSaveToDrive(src, filename) {
 $(function () {
     console.log('$ ready from picamera.js')
 
+    // initiate WebSocket
+    var socket = new WebSocket("ws://" + window.location.host + "/dashboard/");
+
     $('#take_photo').on('click', function (e){
+        event.preventDefault();
+        
+        // send websocket signal
+        var sendIt = JSON.stringify({
+            "text": {
+                "imgnum": 1,
+            }
+        });
+        socket.send(sendIt);
+        
         let img_url = "", img_to_show = "", filename = "", addr = "";
         $.ajax({
             url: $(this).find('a').attr('href'),
@@ -28,6 +41,5 @@ $(function () {
             }
         });
     })
-
 
 });

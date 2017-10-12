@@ -10,13 +10,14 @@ from django.utils import timezone
 from django.shortcuts import HttpResponse, redirect, render
 from django.contrib.auth.decorators import login_required
 from .models import *
+from ..gallery.consumers import *
 
 # rover imports
-from .rover import *
+# from .rover import *
 
 # picamera imports
 # TODO:
-import picamera
+# import picamera
 
 
 @login_required(login_url='/login')
@@ -77,6 +78,8 @@ def take_photo(request):
     camera = picamera.PiCamera(resolution=(1024, 768))
     image = camera.capture(addr, resize=(800, 600))
     camera.close()
+
+    # ws_message(message=None)
 
     data = {
         'img_url': addr[15:],

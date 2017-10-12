@@ -8,9 +8,10 @@ def ws_connect(message):
 
 def ws_message(message):
     logging.info(len(message.content['text']))
-    # out_msg = message.content['text']
     print os.getcwd()
-    with open('static/images/dashboard/wheel.jpg', 'rb') as imgfile:
+
+    # TODO: change path
+    with open('apps/dashboard/static/dashboard/images/group_selfie.jpg', 'rb') as imgfile:
         encoded = base64.b64encode(imgfile.read())
     out = {
         "image": encoded
