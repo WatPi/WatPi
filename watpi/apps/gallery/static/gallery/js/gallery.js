@@ -2,19 +2,7 @@
 
 $(document).ready(function () {
     console.log('ready from gallery!')
-    var socket = new WebSocket("ws://" + window.location.host + "/gallery/");
-
-    // $('#trigger').click(function (event) {
-    //     event.preventDefault();
-    //     // var img = getBase64Image($('#store')[0]);
-    //     var sendIt = JSON.stringify({
-    //         "text": {
-    //             "imgnum": 1,
-    //             // "image": img,
-    //         }
-    //     });
-    //     socket.send(sendIt);
-    // });
+    var socket = new WebSocket("wss://" + window.location.host + "/gallery/");
 
     socket.onmessage = function (event) {
         console.log('i am here')

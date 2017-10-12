@@ -11,11 +11,11 @@ $(function () {
     console.log('$ ready from picamera.js')
 
     // initiate WebSocket
-    var socket = new WebSocket("ws://" + window.location.host + "/dashboard/");
+    var socket = new WebSocket("wss://" + window.location.host + "/dashboard/");
 
-    $('#take_photo').on('click', function (e){
-        event.preventDefault();
-        
+    $('#gallery').on('click', function(e){
+        e.preventDefault();
+
         // send websocket signal
         var sendIt = JSON.stringify({
             "text": {
@@ -23,7 +23,10 @@ $(function () {
             }
         });
         socket.send(sendIt);
-        
+    })
+
+
+    $('#take_photo').on('click', function (e){
         let img_url = "", img_to_show = "", filename = "", addr = "";
         $.ajax({
             url: $(this).find('a').attr('href'),
