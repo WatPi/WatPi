@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 import sys
+import io
 import os
 import json
 from time import sleep
@@ -9,6 +10,8 @@ from django.urls import reverse
 from django.utils import timezone
 from django.shortcuts import HttpResponse, redirect, render
 from django.contrib.auth.decorators import login_required
+from google.cloud import vision
+from google.cloud.vision import types
 from .models import *
 
 # rover imports
@@ -85,6 +88,31 @@ def take_photo(request):
     }
 
     print(data)
+
+    # get annotations
+    try: 
+        image_labels = []
+        client = vision.ImageAnnotatorClient()
+        file_name = data['img_url']
+
+        with io.open(file_name, 'rb') as image_file:
+            content = image_file.read()
+
+        image = types.Image(content=content)
+        response = client.label_detection(image=image)
+        labels = response.label_annotations
+
+        # Printing labels to console to check if working
+        print('Labels: ')
+        for label in labels:
+            print(label.description)
+            image_labels.append(label.description)
+        top_label = image_labels[0]
+        data['label'] = top_label
+
+    except:
+        print('This shit does not work.')
+
 
     return HttpResponse(json.dumps(data))
 
