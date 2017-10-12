@@ -60,13 +60,13 @@ def take_photo(request):
     new_name = 'img_' + str(timezone.now())[:26] + '.jpg'
     new_name = new_name.replace(' ', '_')
     new_time_created = timezone.now()
-    addr = 'apps/dashboard/static/dashboard/images/' + new_name
+    addr = 'static/images/' + new_name
 
     if number_of_photos_stored == 10:
         # rewrite the oldest photo, cap the number of photos at 10
         photo_to_rw = Photo.objects.order_by('time_created').first()
         photo_to_delete = photo_to_rw.name
-        path_to_delete = 'apps/dashboard/static/dashboard/images/' + photo_to_delete
+        path_to_delete = 'static/images/' + photo_to_delete
         os.remove(path_to_delete) 
 
         photo_to_rw.update()
@@ -79,7 +79,7 @@ def take_photo(request):
     camera.close()
 
     data = {
-        'img_url': addr[15:],
+        'img_url': addr,
         # 'img_path_to_save': addr,
         'filename': new_name,
     }
