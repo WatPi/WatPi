@@ -12,11 +12,8 @@
 
 {% block main %}
 <section>
-    <div id="photo_frame">
-        <!-- <img src="{% static 'images/group_selfie.jpg' %}" alt="Your image"> -->
-    </div>
-    <div id="caption">
-    </div>
+    <div id="photo_frame"></div>
+    <div id="caption"></div>
 </section>
 
 <section>
@@ -55,10 +52,18 @@
                         </a>
                     </span>
                 </div>
-                <div class="cornerRight1"></div>
+                <div class="cornerRight1">
+                    <a href="{% url 'user:login_main' %}">
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </a>
+                </div>
             </div>
             <div class="backButton2Center">
-                <div class="cornerLeft2"></div>
+                <div class="cornerLeft2">
+                    <a href="{% url 'user:login_main' %}">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </a>
+                </div>
                 <div class="cornerRight2">
                     <a href="{% url 'user:logout' %}"><span class="glyphicon glyphicon-log-out"></span></a>
                 </div>

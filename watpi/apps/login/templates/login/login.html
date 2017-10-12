@@ -1,13 +1,50 @@
 {% extends 'base.html' %}
+
+{% block title %}<title>WatPi|Login</title>{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+{% load staticfiles %}
+  <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% load crispy_forms_tags %}
 
-{% block content %}
-<header>
-  <h2>{{ greeting }}</h2>
-</header>
-<main>
-  <div>
-    {% crispy form %}
+{% block header %}
+{% endblock %}
+
+{% block main %}
+<div class="center">
+  <div id="half">
+    <div id="brain"></div>
   </div>
+  <div id="head">
+    <span id="lc"></span>
+    <span id="le"></span>
+    <span id="re"></span>
+    <div id="mouth"></div>
+    <span id="rc"></span>
+  </div>
+  <div id="foot"></div>
+  <div id="leg-1"></div>
+  <div id="leg-2"></div>
+</div>
+<!-- <main>
+  <section class="form_content">
+    <!-- <img class='hero_img' src="https://goo.gl/4hsBSz" alt="rover"> -->
+    {% crispy form %}
+  </section> -->
+
+
+
+
 </main>
+{% endblock %}
+
+{% block footer %}
+<footer>
+  <div>
+    <img id='powered_by_pi' src="https://goo.gl/PPyksQ" alt="powered by raspi">
+  </div>
+</footer>
 {% endblock %}

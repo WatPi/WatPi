@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from .forms import LoginForm, ChangePassForm
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 import logging
+
 logging.basicConfig(level=logging.INFO)
 
 def index(request):
@@ -13,7 +14,7 @@ def index(request):
             username = request.user.username
             form = ChangePassForm(initial={'username': username})
             context = {
-                "title": "Change Password",
+                "title": "WatPi | Change Password",
                 "greeting": "Admin Page",
                 "form": form,
             }
@@ -24,7 +25,7 @@ def index(request):
             form = LoginForm()
             context = {
                 "title": "Welcome to WatPi",
-                "greeting": "Welcome!",
+                # "greeting": "Welcome!",
                 "form": form,
             }
             return render(request, 'login/login.html', context)

@@ -65,9 +65,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(os.path.dirname(__file__), '../watpi/templates/'),
                  os.path.join(os.path.dirname(__file__), '../apps/dashboard/templates/dashboard/'),
-                #  os.path.join(os.path.dirname(__file__), '../apps/camera/templates/camera/'),
-                #  os.path.join(os.path.dirname(__file__), '../apps/rover/templates/rover/'), 
-                ],
+                 os.path.join(os.path.dirname(__file__), '../apps/login/templates/login/'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
