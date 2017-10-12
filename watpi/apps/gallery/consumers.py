@@ -1,5 +1,7 @@
-from channels import Group
 import logging, json, base64, os
+from channels import Group
+from ..dashboard.models import *
+
 logging.basicConfig(level=logging.INFO)
 
 def ws_connect(message):
@@ -11,7 +13,10 @@ def ws_message(message):
     print os.getcwd()
 
     # TODO: change path
-    with open('apps/dashboard/static/dashboard/images/group_selfie.jpg', 'rb') as imgfile:
+    lasted_photo_name = Photo.objects.order_by('-time_created').first().name
+    latest_photo_path = 'apps/dashboard/static/dashboard/images/' + lasted_photo_name
+
+    with open(latest_photo_path, 'rb') as imgfile:
         encoded = base64.b64encode(imgfile.read())
     out = {
         "image": encoded
