@@ -20,7 +20,7 @@ $(function () {
                 img_url = parsed_rsp['img_url'];
                 img_name = parsed_rsp['filename'];
                 // #Google Drive
-                addr = "http://127.0.0.1/static/dashboard/images/" + img_name;
+                addr = "../static/dashboard/images/" + img_name;
                 renderSaveToDrive(addr, img_name);
                 img_to_show = "<img src='/" + img_url + "'/>";
                 $('#photo_frame').children().remove();
