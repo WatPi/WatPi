@@ -24,7 +24,7 @@ $(function () {
                 console.log('img_url', img_url);
                 console.log('filename', img_name);
                 // #Google Drive
-                renderSaveToDrive(img_url, img_name);
+                renderSaveToDrive("http://127.0.0.1/static/dashboard/images/"+img_name, img_name);
                 img_to_show = "<img src='/" + img_url + "'/>";
                 $('#photo_frame').children().remove();
                 $('#photo_frame').append(img_to_show);
