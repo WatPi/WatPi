@@ -1,3 +1,11 @@
+h2 {
+  font-weight: bolder;
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  color: #FF847C;
+}
+
 #photo_frame img {
     height: 100%;
     width: 100%;

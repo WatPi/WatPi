@@ -4,7 +4,6 @@
 
 {% block css %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 {% load staticfiles %}
   <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
 {% endblock %}
@@ -16,6 +15,7 @@
 
 {% block main %}
 <h2 class="animated bounceInLeft">Hi, I'm WatPi!</h2>
+<h4><a href="{% url 'gallery:index' %}"></a> No account with us? Go check out live photos!</h4>
 <div class="center">
   <div id="half">
     <div id="brain"></div>

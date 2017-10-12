@@ -1,9 +1,7 @@
 * {
-    /* outline: 1px solid gold; */
-    /* box-sizing: border-box; */
     margin: 0;
     padding: 0;
-    color: white;
+    color: #fffff9;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -18,6 +16,16 @@ h2 {
   position: absolute;
   top: 4rem;
   left: 4rem;
+}
+
+h4 {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+}
+
+h4 a {
+  text-decoration: none;
 }
 
 .center {
