@@ -4,6 +4,7 @@
 
 {% block css %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 {% load staticfiles %}
   <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
 {% endblock %}
@@ -20,8 +21,8 @@
   </div>
   <div id="head">
     <span id="lc"></span>
-    <span id="le"></span>
-    <span id="re"></span>
+    <span id="le" class="animated infinite pulse"></span>
+    <span id="re" class="animated infinite pulse"></span>
     <div id="mouth"></div>
     <span id="rc"></span>
   </div>

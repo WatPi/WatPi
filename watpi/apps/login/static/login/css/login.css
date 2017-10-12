@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     color: white;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 /* +++++++++++ robot design is from Aleks https://codepen.io/achudars/pen/sLIef?page=1& ++++++++++ */
@@ -19,7 +20,7 @@ body {
   left: 50%;
   top: 30%;
   margin-left: -150px;
-  margin-top: -200px;
+  margin-top: -150px;
 }
 #half {
   text-align: center;
@@ -150,15 +151,17 @@ legend {
     width: 100%;
     padding: 10px;
     margin-bottom: 0;
-    font-size: 2rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
     line-height: inherit;
+    color: #f7e7e6;
     border: 0;
     /* border: 1px solid #e5e5e5; */
-    color: #f7e7e6;
 }
 
 fieldset {
-    margin: 1.2rem auto;
+    margin: 2rem auto;
 }
 
 input {
@@ -172,10 +175,31 @@ input {
 }
 
 input[type=submit] {
-    margin: 15px auto;
-    background-color: #02ff90;
+    margin: 15px auto 25px auto;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    background-color: #279c69;
+    font-size: 2.6rem;
+    font-weight: bolder;
 }
 
+input[type=submit]:hover {
+    background-color: #02ff90;
+    transform: scale(1.1, 1.1);
+}
+
+.control-group {
+    margin-top: 0;
+}
+
+.help-inline {
+    display: block;
+}
+
+.help-inline strong {
+    color: #d86a6a;
+}
 
 
 

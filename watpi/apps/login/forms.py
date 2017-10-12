@@ -15,7 +15,7 @@ class LoginForm(forms.Form):
     helper.form_class = 'form-horizontal'
     helper.form_method = 'POST'
     helper.form_action = '/login/'
-    helper.add_input(Submit('submit', 'Login'))
+    helper.add_input(Submit('submit', 'GO!'))
 
     def clean(self):
         form_data = self.cleaned_data
@@ -57,7 +57,7 @@ class ChangePassForm(forms.Form):
             'confirm_pass',
         ),
         ButtonHolder(
-            Submit('submit', 'Change Password'),
+            Submit('submit', 'GO!'),
         )
     )
     helper.form_class = 'form-horizontal'
