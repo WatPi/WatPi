@@ -13,9 +13,10 @@ from django.contrib.auth.decorators import login_required
 from google.cloud import vision
 from google.cloud.vision import types
 from .models import *
+from ..gallery.consumers import *
 
 # rover imports
-from .rover import *
+# from .rover import *
 
 # picamera imports
 # TODO:
@@ -83,7 +84,6 @@ def take_photo(request):
 
     data = {
         'img_url': addr[15:],
-        # 'img_path_to_save': addr,
         'filename': new_name,
     }
 

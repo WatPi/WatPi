@@ -16,6 +16,7 @@
 {% endblock %}
 
 {% block css %} 
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     {% load staticfiles %}
     <link href="{% static 'dashboard/css/dashboard.css' %}" rel="stylesheet">
@@ -23,6 +24,7 @@
 {% endblock %}
 
 {% block main %}
+<h2 class="animated bounceInLeft">To the Gallery, see live photos!</h2>
 <section>
     <div id="photo_frame"></div>
     <div id="caption">
@@ -69,9 +71,9 @@
                     </span>
                 </div>
                 <div class="cornerRight1">
-                    <a href="{% url 'user:login_main' %}">
-                        <span class="glyphicon glyphicon-picture"></span>
-                    </a>
+                    <!-- <a href="{% url 'gallery:index' %}"> -->
+                        <span id="gallery" class="glyphicon glyphicon-picture"></span>
+                    <!-- </a> -->
                 </div>
             </div>
             <div class="backButton2Center">
@@ -98,6 +100,5 @@
     <script type="text/javascript" src="{% static 'dashboard/js/dashboard.js' %}"></script>
     <script type="text/javascript" src="{% static 'dashboard/js/rover.js' %}"></script>
     <script type="text/javascript" src="{% static 'dashboard/js/picamera.js' %}"></script>
-    <script src="{% static 'dashboard/js/test.js' %}"></script>
 {% endblock %}
 

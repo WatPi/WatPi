@@ -10,6 +10,22 @@ function renderSaveToDrive(src, filename) {
 $(function () {
     console.log('$ ready from picamera.js')
 
+    // initiate WebSocket
+    var socket = new WebSocket("wss://" + window.location.host + "/dashboard/");
+
+    $('#gallery').on('click', function(e){
+        e.preventDefault();
+
+        // send websocket signal
+        var sendIt = JSON.stringify({
+            "text": {
+                "imgnum": 1,
+            }
+        });
+        socket.send(sendIt);
+    })
+
+
     $('#take_photo').on('click', function (e){
         let img_url = "", img_to_show = "", filename = "", addr = "";
         $.ajax({
@@ -19,17 +35,14 @@ $(function () {
                 parsed_rsp = JSON.parse(response)
                 img_url = parsed_rsp['img_url'];
                 img_name = parsed_rsp['filename'];
-                // addr = parsed_rsp['img_path_to_save'];
-                console.log('addr', img_url);
-                console.log('filename', img_name);
                 // #Google Drive
-                renderSaveToDrive(img_url, img_name);
+                addr = "../static/dashboard/images/" + img_name;
+                renderSaveToDrive(addr, img_name);
                 img_to_show = "<img src='/" + img_url + "'/>";
                 $('#photo_frame').children().remove();
                 $('#photo_frame').append(img_to_show);
             }
         });
     })
-
 
 });

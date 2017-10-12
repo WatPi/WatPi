@@ -40,10 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    # 'apps.camera',
-    'apps.dashboard',
-    # 'apps.rover',
     'apps.login',
+    'apps.dashboard',
+    'apps.gallery',
     'crispy_forms',
     'channels',
 ]
@@ -66,6 +65,7 @@ TEMPLATES = [
         'DIRS': [os.path.join(os.path.dirname(__file__), '../watpi/templates/'),
                  os.path.join(os.path.dirname(__file__), '../apps/dashboard/templates/dashboard/'),
                  os.path.join(os.path.dirname(__file__), '../apps/login/templates/login/'),
+                 os.path.join(os.path.dirname(__file__), '../apps/gallery/templates/gallery/'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {

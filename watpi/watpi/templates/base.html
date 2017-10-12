@@ -11,25 +11,10 @@
 </head>
 <body>
     {% block header %}
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     {% endblock %}
 
     {% block main %}
-        <div class="container-fluid" style="margin-top: 100px;">
-            <div class="row">
-                <div class="col-sm-2">
-                    {% block left_sidebar %}
-                    {% endblock %}
-                </div>
-                <div class="col-sm-6">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-                <div class="col-sm-3">
-                    {% block right_sidebar %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
     {% endblock %}
 
     {% block footer %}
