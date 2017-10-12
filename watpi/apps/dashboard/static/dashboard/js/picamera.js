@@ -19,11 +19,12 @@ $(function () {
                 parsed_rsp = JSON.parse(response)
                 img_url = parsed_rsp['img_url'];
                 img_name = parsed_rsp['filename'];
-                // addr = parsed_rsp['img_path_to_save'];
-                console.log('addr', img_url);
+                addr = parsed_rsp['img_path_to_save'];
+                console.log('addr', addr);
+                console.log('img_url', img_url);
                 console.log('filename', img_name);
                 // #Google Drive
-                renderSaveToDrive(img_url, img_name);
+                renderSaveToDrive(addr, img_name);
                 img_to_show = "<img src='/" + img_url + "'/>";
                 $('#photo_frame').children().remove();
                 $('#photo_frame').append(img_to_show);

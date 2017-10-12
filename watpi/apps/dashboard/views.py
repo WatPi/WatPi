@@ -78,9 +78,11 @@ def take_photo(request):
     image = camera.capture(addr, resize=(800, 600))
     camera.close()
 
+    # Google Drive save path
+    img_path_to_save = 'static' + addr[22:]
     data = {
-        'img_url': addr[32:],
-        # 'img_path_to_save': addr,
+        'img_url': addr[15:],
+        'img_path_to_save': img_path_to_save,
         'filename': new_name,
     }
 
