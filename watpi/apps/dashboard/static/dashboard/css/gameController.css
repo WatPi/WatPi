@@ -264,3 +264,11 @@ body{
   margin-top: 17%;
   color: #e0cdc8;
 }
+
+.glyphicon-user {
+  color: #ffffbe;
+}
+
+.glyphicon-picture {
+  color: #d1dffb;
+}

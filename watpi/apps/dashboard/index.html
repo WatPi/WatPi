@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Save to Drive Demo: Basic Page</title>
+    <link rel="canonical" href="127.0.0.1:8000">
+    <script>
+      window.___gcfg = {
+        parsetags: 'explicit'
+      };
+    </script>
+    <script src="https://apis.google.com/js/platform.js" async defer>
+        {parsetags: 'explicit'}
+    </script>
+    </head>
+  <body>
+    {% load static %}
+    <a href="javascript:void(0)" id="render-link">Render the Save to Drive button</a>
+    <div id="savetodrive-div"></div>
+    <script>
+      function renderSaveToDrive() {
+        gapi.savetodrive.render('savetodrive-div', {
+          src: '{% static "practice.txt" %}',
+          filename: 'practice.txt',
+          sitename: 'WatPi'
+        });
+      }
+      document.getElementById('render-link').addEventListener('click', renderSaveToDrive);
+    </script>
+  </body>
+</html>
