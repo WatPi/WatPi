@@ -1,0 +1,51 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %}
+<title>WatPi - Camera </title>
+{% endblock %}
+
+{% block left_sidebar %}
+<div class="panel panel-default">
+    <div class="panel panel-header">
+        <h5>Left Sidebar</h5>
+    </div>
+    <div class="panel panel-body">
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel panel-body">
+        <h1>WatPi - Camera</h1>
+
+        <div class="panel panel-default">
+            {{ caption }}
+            <img src="{% static 'images/image2.jpg' %}" alt="Your image">
+        </div>
+        
+        <p><a href="{% url 'camera:take_photo' %}" value="Take a Small Picture" class="btn btn-default">Take a small picture</a></p>
+        
+        <p><a href="{% url 'camera:take_photo' %}" value="Take a Small Picture" class="btn btn-default">Take a small picture</a></p>
+
+        <p><a href="{% url 'camera:take_lg_photo' %}" value="Take a Large Picture" class="btn btn-default">Take a big picture</a></p>
+        
+        <p><a href="{% url 'camera:take_video' %}" value="Take a Video" class="btn btn-default">Take a 10s video</a></p>
+        
+        <p><a href="{% url 'camera:start_preview' %}" value="Start Preview" class="btn btn-default">Start Preview</a></p>
+
+
+    </div>
+</div>
+{% endblock %}
+
+{% block right_sidebar %}
+<div class="panel panel-default">
+    <div class="panel panel-header">
+        <h5>Right Sidebar</h5>
+    </div>
+    <div class="panel panel-body">
+    </div>
+</div>
+{% endblock %}
