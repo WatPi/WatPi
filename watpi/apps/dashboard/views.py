@@ -82,6 +82,8 @@ def take_photo(request):
     print(data)
     print('data url: ')
     print(data['img_url'])
+
+    sleep(20)
     # Google Cloud Vision to get annotations
     try: 
         image_labels = []
