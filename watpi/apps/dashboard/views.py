@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+# Google Cloud Vision
+from google.cloud import vision
+from google.cloud.vision import types
+
 import sys
 import os
 import json
@@ -10,6 +14,7 @@ from django.utils import timezone
 from django.shortcuts import HttpResponse, redirect, render
 from django.contrib.auth.decorators import login_required
 from .models import *
+from ..gallery.consumers import *
 
 # rover imports
 from .rover import *
@@ -44,17 +49,6 @@ def rover_stop(request):
 
 
 # +++++++++++++++ picamera view section +++++++++++++++
-# TODO: do we need this?????
-# def snap_photo(request):
-#     pass
-#     camera = picamera.PiCamera(resolution=(1024, 768))
-#     image = camera.capture(
-#         'apps/camera/static/images/image_sm.jpg', resize=(320, 240))
-#     context = {'image': 'images/image_sm.jpg', }
-#     camera.close()
-#     return redirect(reverse('dashboard:index'))
-
-
 def take_photo(request):
     number_of_photos_stored = Photo.objects.all().count()
     new_name = 'img_' + str(timezone.now())[:26] + '.jpg'
@@ -83,18 +77,27 @@ def take_photo(request):
         'filename': new_name,
     }
 
-    print(data)
+    # Google Cloud Vision to get annotations
+    try: 
+        image_labels = []
+        client = vision.ImageAnnotatorClient()
+        file_name = data['img_url']
+
+        with io.open(file_name, 'rb') as image_file:
+            content = image_file.read()
+
+        image = types.Image(content=content)
+        response = client.label_detection(image=image)
+        labels = response.label_annotations
+
+        # Printing labels to console to check 
+        print('Labels: ')
+        for label in labels:
+            print(label.description)
+            image_labels.append(label.description)
+        top_label = image_labels[0]
+        data['label'] = top_label
+    except:
+        print('This shit does not work.')
 
     return HttpResponse(json.dumps(data))
-
-
-# def capture_10s_video(request):
-# TODO do we need???????
-#     pass
-#     camera = picamera.PiCamera(resolution=(1024, 768))
-#     video = camera.start_recording('apps/camera/static/images/video.h264')
-#     sleep(10)
-#     camera.stop_recording()
-#     camera.close()
-#     context = {'video': 'images/video.h264', }
-#     return redirect(reverse('dashboard:index'))

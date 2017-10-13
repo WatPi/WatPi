@@ -3,8 +3,8 @@
 {% block title %}<title>WatPi|Login</title>{% endblock %}
 
 {% block css %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 {% load staticfiles %}
   <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
 {% endblock %}
@@ -15,6 +15,8 @@
 {% endblock %}
 
 {% block main %}
+<h2 class="animated bounceInLeft">Hi, I'm WatPi!</h2>
+<h4><a href="{% url 'gallery:index' %}" target="_blank">No account with us? <br />Go check out live photos!</a></h4>
 <div class="center">
   <div id="half">
     <div id="brain"></div>

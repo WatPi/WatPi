@@ -19,9 +19,8 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^camera/', include('apps.camera.urls', namespace='camera')),
-    url(r'^dashboard/', include('apps.dashboard.urls', namespace='dashboard')),
-    url(r'^rover/', include('apps.rover.urls', namespace='rover')),
-    url(r'^login/', include('apps.login.urls', namespace='user')),
     url(r'^$', RedirectView.as_view(url='/dashboard/', permanent=False)),
+    url(r'^login/', include('apps.login.urls', namespace='user')),
+    url(r'^dashboard/', include('apps.dashboard.urls', namespace='dashboard')),
+    url(r'^gallery/', include('apps.gallery.urls', namespace='gallery')),
 ]

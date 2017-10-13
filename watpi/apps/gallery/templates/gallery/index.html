@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% block css %} 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    {% load staticfiles %}
+    <link href="{% static 'gallery/css/gallery.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+<h2 class="animated bounceInLeft"><a href="{% url 'user:login_main' %}">Play WatPi!</a></h2>
+
+<section>
+    <div id="emit"></div>
+    <div id="caption">
+        {% load static %}
+        <div id="savetodrive-div"></div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static 'gallery/js/gallery.js' %}"></script>
+{% endblock %}
+
