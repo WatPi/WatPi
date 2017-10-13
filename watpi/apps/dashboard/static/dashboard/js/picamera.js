@@ -27,7 +27,7 @@ $(function () {
 
 
     $('#take_photo').on('click', function (e){
-        let img_url = "", img_to_show = "", filename = "", addr = "", caption = "";
+        let img_url = "", img_to_show = "", filename = "", addr = "", label = "";
         $.ajax({
             url: $(this).find('a').attr('href'),
             method: 'get',
@@ -44,11 +44,11 @@ $(function () {
                 $('#photo_frame').append(img_to_show);
 
                 // Google Cloud Vision annotation
-                caption = parsed_rsp['label'];
-                caption = "<p>Hey, nice " + caption + "</p>"
-                $('#caption').children().remove();
-                $('#caption').append(caption);
-                console.log('cap', caption);
+                label = parsed_rsp['label'];
+                label = "<p>Hey, nice " + label + "</p>"
+                $('#label').children().remove();
+                $('#label').append(label);
+                console.log('label', label);
             }
         });
     })

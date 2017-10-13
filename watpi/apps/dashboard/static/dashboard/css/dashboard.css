@@ -52,4 +52,6 @@ p {
     background-color: #fffff9;
     border: 7px solid #fffff9;
     border-radius: 0 0 3px 3px;
+    display: flex;
+    justify-content: space-between;
 }
