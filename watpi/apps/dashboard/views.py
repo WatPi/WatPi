@@ -7,6 +7,7 @@ from google.cloud.vision import types
 
 import sys
 import os
+import io
 import json
 from time import sleep
 from django.urls import reverse
