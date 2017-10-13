@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function () {
-    console.log('ready from gallery!')
+    console.log('ready from gallery!');
     var socket = new WebSocket("wss://" + window.location.host + "/gallery/");
 
     socket.onmessage = function (event) {

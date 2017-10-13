@@ -62,8 +62,10 @@ def take_photo(request):
         photo_to_rw = Photo.objects.order_by('time_created').first()
         photo_to_delete = photo_to_rw.name
         path_to_delete = 'apps/dashboard/static/dashboard/images/' + photo_to_delete
-        os.remove(path_to_delete) 
-
+        try:
+            os.remove(path_to_delete) 
+        except:
+            print('cannot delete, maybe photo not exist')
         photo_to_rw.update()
 
     else:
