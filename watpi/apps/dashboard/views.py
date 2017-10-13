@@ -91,7 +91,6 @@ def take_photo(request):
         print('file url: ') 
         print(file_name)
 
-        sleep(5)
         with io.open(file_name, 'rb') as image_file:
             content = image_file.read()
 
