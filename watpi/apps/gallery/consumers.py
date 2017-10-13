@@ -1,4 +1,7 @@
-import logging, json, base64, os
+import logging
+import json
+import base64
+import os
 from channels import Group
 from ..dashboard.models import *
 
@@ -7,6 +10,7 @@ logging.basicConfig(level=logging.INFO)
 def ws_connect(message):
     message.reply_channel.send({"accept": True})
     Group("dash").add(message.reply_channel)
+
 
 def ws_message(message):
     logging.info(len(message.content['text']))
@@ -23,5 +27,3 @@ def ws_message(message):
     Group("dash").send({
         "text": out_msg,
     })
-
-    # TODO: out_msg????

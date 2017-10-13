@@ -9,7 +9,7 @@ $(document).ready(function () {
         var text = JSON.parse(event.data);
         console.log(text)
         if (text) {
-            var img = $('<img />').attr('src', 'data:image/png;base64,' + text.image).attr('height', '200');
+            var img = $('<img />').attr('src', 'data:image/png;base64,' + text.image);
             $('#emit').html(img);
         }
     }
