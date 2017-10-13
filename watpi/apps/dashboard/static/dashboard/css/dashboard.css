@@ -1,9 +1,24 @@
 h2 {
   font-weight: bolder;
   position: absolute;
-  top: 4rem;
-  left: 4rem;
-  color: #FF847C;
+  top: 5rem;
+  left: 7rem;
+}
+
+h2 a {
+  text-decoration: none;
+  color: #fffff9;
+}
+
+h2 a:hover {
+  color: #f9ffaa;
+  text-decoration: none;
+  font-weight: bolder;
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+
+h2 a::after {
+  text-decoration: none;
 }
 
 #photo_frame img {

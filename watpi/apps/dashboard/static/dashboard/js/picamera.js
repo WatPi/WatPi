@@ -46,6 +46,7 @@ $(function () {
                 // Google Cloud Vision annotation
                 caption = parsed_rsp['label'];
                 caption = "<p>" + caption + "</p>"
+                $('#caption').children().remove();
                 $('#caption').append(caption);
                 console.log('cap', caption);
             }
