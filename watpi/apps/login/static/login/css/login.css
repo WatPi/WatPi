@@ -14,18 +14,19 @@ body {
 h2 {
   font-weight: bolder;
   position: absolute;
-  bottom: 5rem;
+  top: 5rem;
   left: 4rem;
 }
 
 h4 {
   position: absolute;
-  top: 4rem;
+  bottom: 4rem;
   right: 4rem;
 }
 
 h4 a {
   text-decoration: none;
+  color: #fffff9;
 }
 
 .center {

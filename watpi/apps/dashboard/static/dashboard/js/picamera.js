@@ -27,7 +27,7 @@ $(function () {
 
 
     $('#take_photo').on('click', function (e){
-        let img_url = "", img_to_show = "", filename = "", addr = "";
+        let img_url = "", img_to_show = "", filename = "", addr = "", caption = "";
         $.ajax({
             url: $(this).find('a').attr('href'),
             method: 'get',
@@ -35,12 +35,19 @@ $(function () {
                 parsed_rsp = JSON.parse(response)
                 img_url = parsed_rsp['img_url'];
                 img_name = parsed_rsp['filename'];
-                // #Google Drive
+
+                // Google Drive
                 addr = "../static/dashboard/images/" + img_name;
                 renderSaveToDrive(addr, img_name);
                 img_to_show = "<img src='/" + img_url + "'/>";
                 $('#photo_frame').children().remove();
                 $('#photo_frame').append(img_to_show);
+
+                // Google Cloud Vision annotation
+                caption = parsed_rsp['label'];
+                caption = "<p>" + caption + "</p>"
+                $('#caption').append(caption);
+                console.log('cap', caption);
             }
         });
     })
