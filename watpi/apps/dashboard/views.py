@@ -83,32 +83,32 @@ def take_photo(request):
     print('data url: ')
     print(data['img_url'])
 
-    # Google Cloud Vision to get annotations
-    try: 
-        image_labels = []
-        client = vision.ImageAnnotatorClient()
-        file_name = addr
-        print('file url: ') 
-        print(file_name)
+    # # Google Cloud Vision to get annotations
+    # try: 
+    #     image_labels = []
+    #     client = vision.ImageAnnotatorClient()
+    #     file_name = addr
+    #     print('file url: ') 
+    #     print(file_name)
 
-        with io.open(file_name, 'rb') as image_file:
-            content = image_file.read()
+    #     with io.open(file_name, 'rb') as image_file:
+    #         content = image_file.read()
 
-        image = types.Image(content=content)
-        print('made it to image =')
-        response = client.label_detection(image=image)
-        labels = response.label_annotations
-        print(labels)
+    #     image = types.Image(content=content)
+    #     print('made it to image =')
+    #     response = client.label_detection(image=image)
+    #     labels = response.label_annotations
+    #     print(labels)
 
-        # Printing labels to console to check 
-        print('Labels: ')
-        for label in labels:
-            print(label.description)
-            image_labels.append(label.description)
-        top_label = image_labels[0]
-        data['label'] = top_label
-    except:
-        print('This shit does not work.')
+    #     # Printing labels to console to check 
+    #     print('Labels: ')
+    #     for label in labels:
+    #         print(label.description)
+    #         image_labels.append(label.description)
+    #     top_label = image_labels[0]
+    #     data['label'] = top_label
+    # except:
+    #     print('This shit does not work.')
 
 
     return HttpResponse(json.dumps(data))
