@@ -79,26 +79,26 @@ def take_photo(request):
         'img_url': addr[15:],
         'filename': new_name,
     }
-    print(data)
-    print('data url: ')
-    print(data['img_url'])
+    # print(data)
+    # print('data url: ')
+    # print(data['img_url'])
 
     # Google Cloud Vision to get annotations
     try: 
         image_labels = []
         client = vision.ImageAnnotatorClient()
         file_name = addr
-        print('file url: ') 
-        print(file_name)
+        # print('file url: ') 
+        # print(file_name)
 
         with io.open(file_name, 'rb') as image_file:
             content = image_file.read()
 
         image = types.Image(content=content)
-        print('made it to image =')
+        # print('made it to image =')
         response = client.label_detection(image=image)
         labels = response.label_annotations
-        print(labels)
+        # print(labels)
 
         # Printing labels to console to check 
         print('Labels: ')
