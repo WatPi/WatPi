@@ -83,7 +83,6 @@ def take_photo(request):
     print('data url: ')
     print(data['img_url'])
 
-    sleep(20)
     # Google Cloud Vision to get annotations
     try: 
         image_labels = []
@@ -92,12 +91,15 @@ def take_photo(request):
         print('file url: ') 
         print(data['img_url'])
 
+        sleep(10)
         with io.open(file_name, 'rb') as image_file:
             content = image_file.read()
 
         image = types.Image(content=content)
+        print('made it to image =')
         response = client.label_detection(image=image)
         labels = response.label_annotations
+        print(labels)
 
         # Printing labels to console to check 
         print('Labels: ')
@@ -106,30 +108,6 @@ def take_photo(request):
             image_labels.append(label.description)
         top_label = image_labels[0]
         data['label'] = top_label
-    except:
-        print('This shit does not work.')
-
-    # get annotations
-    try: 
-        image_labels = []
-        client = vision.ImageAnnotatorClient()
-        file_name = data['img_url']
-
-        with io.open(file_name, 'rb') as image_file:
-            content = image_file.read()
-
-        image = types.Image(content=content)
-        response = client.label_detection(image=image)
-        labels = response.label_annotations
-
-        # Printing labels to console to check if working
-        print('Labels: ')
-        for label in labels:
-            print(label.description)
-            image_labels.append(label.description)
-        top_label = image_labels[0]
-        data['label'] = top_label
-
     except:
         print('This shit does not work.')
 
