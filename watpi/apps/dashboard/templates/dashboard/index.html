@@ -24,7 +24,7 @@
 {% endblock %}
 
 {% block main %}
-<h2 class="animated bounceInLeft">To the Gallery, see live photos!</h2>
+<h2 class="animated bounceInLeft"><a href="{% url 'gallery:index' %}">To the Gallery, see live photos!</a></h2>
 <section>
     <div id="photo_frame"></div>
     <div id="caption">
