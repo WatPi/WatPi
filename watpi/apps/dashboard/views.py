@@ -2,8 +2,8 @@
 from __future__ import unicode_literals
 
 # Google Cloud Vision
-# from google.cloud import vision
-# from google.cloud.vision import types
+from google.cloud import vision
+from google.cloud.vision import types
 
 import sys
 import os
@@ -17,11 +17,11 @@ from .models import *
 from ..gallery.consumers import *
 
 # rover imports
-# from .rover import *
+from .rover import *
 
 # picamera imports
 # TODO:
-# import picamera
+import picamera
 
 
 @login_required(login_url='/login')
@@ -68,9 +68,9 @@ def take_photo(request):
     else:
         Photo.objects.create(name=new_name, time_created=new_time_created)
 
-    # camera = picamera.PiCamera(resolution=(1024, 768))
-    # image = camera.capture(addr, resize=(800, 600))
-    # camera.close()
+    camera = picamera.PiCamera(resolution=(1024, 768))
+    image = camera.capture(addr, resize=(800, 600))
+    camera.close()
 
     data = {
         'img_url': addr[15:],
@@ -78,26 +78,26 @@ def take_photo(request):
     }
 
     # Google Cloud Vision to get annotations
-    # try: 
-    #     image_labels = []
-    #     client = vision.ImageAnnotatorClient()
-    #     file_name = data['img_url']
+    try: 
+        image_labels = []
+        client = vision.ImageAnnotatorClient()
+        file_name = data['img_url']
 
-    #     with io.open(file_name, 'rb') as image_file:
-    #         content = image_file.read()
+        with io.open(file_name, 'rb') as image_file:
+            content = image_file.read()
 
-    #     image = types.Image(content=content)
-    #     response = client.label_detection(image=image)
-    #     labels = response.label_annotations
+        image = types.Image(content=content)
+        response = client.label_detection(image=image)
+        labels = response.label_annotations
 
-    #     # Printing labels to console to check 
-    #     print('Labels: ')
-    #     for label in labels:
-    #         print(label.description)
-    #         image_labels.append(label.description)
-    #     top_label = image_labels[0]
-    #     data['label'] = top_label
-    # except:
-    #     print('This shit does not work.')
+        # Printing labels to console to check 
+        print('Labels: ')
+        for label in labels:
+            print(label.description)
+            image_labels.append(label.description)
+        top_label = image_labels[0]
+        data['label'] = top_label
+    except:
+        print('This shit does not work.')
 
     return HttpResponse(json.dumps(data))
