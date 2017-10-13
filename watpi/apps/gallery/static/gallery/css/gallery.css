@@ -1,9 +1,37 @@
-#emit {
-    height: 200px;
-    width: 500px;
-    outline: 3px solid black;
+body {
+    background-color: #383232;
 }
 
-#trigger {
+section {
+    position: fixed;
+    top: 15%;
+    left: 33%;
+    -moz-transform:rotate(-5deg);
+    -webkit-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+}
 
+#emit img {
+    height: 100%;
+    width: 100%;
+}
+
+#emit {
+    height: 300px;
+    width: 400px;
+    margin-top: 3rem;
+    border: 7px solid #fffff9;
+    border-radius: 3px 3px 0 0;
+    background-image: url(https://goo.gl/E6auCt);
+    background-position: center; 
+    background-size: 100%;
+}
+
+#caption {
+    height: 100px;
+    width: 400px;
+    background-color: #fffff9;
+    border: 7px solid #fffff9;
+    border-radius: 0 0 3px 3px;
 }
