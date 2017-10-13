@@ -11,7 +11,7 @@ $(function () {
     console.log('$ ready from picamera.js')
 
     // initiate WebSocket
-    var socket = new WebSocket("ws://" + window.location.host + "/dashboard/");
+    var socket = new WebSocket("wss://" + window.location.host + "/dashboard/");
 
     $('#gallery').on('click', function(e){
         e.preventDefault();
