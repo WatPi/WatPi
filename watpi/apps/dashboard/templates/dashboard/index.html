@@ -58,7 +58,7 @@
                 <div id="backward" class="crossBottom"><a href="{% url 'dashboard:rover_move' direction='backward' %}"></a></div>
                 <div id="left" class="crossLeft"><a href="{% url 'dashboard:rover_move' direction='left' %}"></a></div>
                 <div id="right" class="crossRight"><a href="{% url 'dashboard:rover_move' direction='right' %}"></a></div>
-                <div class="crossCircle"></div>
+                <div id="stop" class="crossCircle"><a href="{% url 'dashboard:rover_stop' %}"></a></div>
             </div>
         </div>
 
