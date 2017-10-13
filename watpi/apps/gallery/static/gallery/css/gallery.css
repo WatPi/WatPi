@@ -1,9 +1,61 @@
-#emit {
-    height: 200px;
-    width: 500px;
-    outline: 3px solid black;
+body {
+    background-color: #432c7a;
 }
 
-#trigger {
+h2 {
+  font-weight: bolder;
+  position: absolute;
+  top: 5rem;
+  left: 10rem;
+}
 
+h2 a {
+  text-decoration: none;
+  color: #fffff9;
+}
+
+h2 a:hover {
+  color: #f9ffaa;
+  text-decoration: none;
+  font-weight: bolder;
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+
+h2 a::after {
+  text-decoration: none;
+}
+
+section {
+    position: fixed;
+    top: 15%;
+    left: 33%;
+    padding: 0;
+    -moz-transform:rotate(-5deg);
+    -webkit-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+    box-shadow: 15px 15px 15px rgba(0,0,0,0.3);
+}
+
+#emit img {
+    height: 100%;
+    width: 100%;
+}
+
+#emit {
+    height: 300px;
+    width: 400px;
+    border: 7px solid #fffff9;
+    border-radius: 3px 3px 0 0;
+    background-image: url(https://goo.gl/E6auCt);
+    background-position: center; 
+    background-size: 100%;
+}
+
+#caption {
+    height: 100px;
+    width: 400px;
+    background-color: #fffff9;
+    border: 7px solid #fffff9;
+    border-radius: 0 0 3px 3px;
 }

@@ -11,7 +11,15 @@
 
 {% block main %}
 
-<div id="emit"></div>
+<h2 class="animated bounceInLeft"><a href="{% url 'user:login_main' %}">Play WatPi!</a></h2>
+
+<section>
+    <div id="emit"></div>
+    <div id="caption">
+        {% load static %}
+        <div id="savetodrive-div"></div>
+    </div>
+</section>
 
 {% endblock %}
 
