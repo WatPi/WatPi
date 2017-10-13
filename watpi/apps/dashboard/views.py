@@ -87,11 +87,11 @@ def take_photo(request):
     try: 
         image_labels = []
         client = vision.ImageAnnotatorClient()
-        file_name = data['img_url']
+        file_name = '../' + data['img_url']
         print('file url: ') 
-        print(data['img_url'])
+        print(file_name)
 
-        sleep(10)
+        sleep(5)
         with io.open(file_name, 'rb') as image_file:
             content = image_file.read()
 
