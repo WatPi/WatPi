@@ -80,12 +80,15 @@ def take_photo(request):
         'filename': new_name,
     }
     print(data)
+    print('data url: ')
     print(data['img_url'])
     # Google Cloud Vision to get annotations
     try: 
         image_labels = []
         client = vision.ImageAnnotatorClient()
         file_name = data['img_url']
+        print('file url: ') 
+        print(data['img_url'])
 
         with io.open(file_name, 'rb') as image_file:
             content = image_file.read()
