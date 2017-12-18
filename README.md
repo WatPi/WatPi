@@ -1,10 +1,20 @@
 # WatPi 
 ### Say wat?
 
+<img src="https://lh3.googleusercontent.com/zj6tWkJGGRFxI1uLiMj56U-G7FwOv5WxsltXhYoPHtunmOocZafedfi4cfIP_qw7-pxg-Xjtwb_8EJrimBmOVg=w2560-h1406-rw" with="360">
+
 ## Project Overview
 This little robot called **WatPi** is assembled using a Raspberry Pi 3, a PiCamera, a DC motor HAT, a chassis kit, and a pair of googly eyes.
 WatPi is controlled using a web app powered by Django. On the "dashboard" page of the web app, the user can drive the WatPi using a virtual game control panel. The user can also take pictures and see what WatPi sees when it's roaming around in the world. WatPi can also tell what's in the picture, and complement on the scenes it sees. It might say, for instance, "hey, nice ceiling!", or "hey, nice robot!".
 WatPi doesn't like to be controlled by multiple people all at once, but audience can still participate by visiting the "gallery" page. When WatPi takes a picture, and the user who controls it decides to share, the audience can see the picture on the gallery page.
+
+The dashboard look:
+
+<img src="https://lh5.googleusercontent.com/n25RLMyjHWFZ41gVLQBJpqNXGc_aQe6eyMgBAQF4335WZ-F83tl1rXZRfdYq2WMhO55Cx2GbYb7eDLqXcvY7fA=w2560-h1406-rw" width="360">
+
+The gallery look:
+
+<img src="" width="360>
 
 ## List of Materials
 - A Raspberry Pi, RPi (we used Raspberry Pi 3). Get it at [AdaFruit](https://www.adafruit.com/product/3055).
