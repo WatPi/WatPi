@@ -31,5 +31,9 @@ WatPi is made happily by (in alphabetical order):
 - [Lola Wang](https://github.com/ayuspark)
 - [Maki Roggers](https://github.com/makiroggers)
 
+This is us!
 
+<img src="https://lh3.googleusercontent.com/_OOsiFNRYWiPi2KwUIeMnEZffT1IK7cx5ILhM8qNRsNpKilGb-wtAMyRtq15k44mz1jpCqWRt_OKb-8=w2560-h1406-rw" width="360" />
+
+**Check out how it is like when making WatPi, see [video]()**
 
