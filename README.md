@@ -8,7 +8,7 @@ This little robot called **WatPi** is assembled using a Raspberry Pi 3, a PiCame
 WatPi is controlled using a web app powered by Django. On the "dashboard" page of the web app, the user can drive the WatPi using a virtual game control panel. The user can also take pictures and see what WatPi sees when it's roaming around in the world. WatPi can also tell what's in the picture, and complement on the scenes it sees. It might say, for instance, "hey, nice ceiling!", or "hey, nice robot!".
 WatPi doesn't like to be controlled by multiple people all at once, but audience can still participate by visiting the "gallery" page. When WatPi takes a picture, and the user who controls it decides to share, the audience can see the picture on the gallery page.
 
-The login look
+The login look:
 
 <img src="https://drive.google.com/uc?export=view&id=1UEfA08mWbKNvh9cwQm-GILiYOpP9Lr9iOg" width="360">
 
