@@ -1,7 +1,7 @@
 # WatPi 
 ### Say wat?
 
-<img src="https://lh3.googleusercontent.com/3jjascTUqmt7yjfn2foCdK5uLs37n_nqaU3F-Xz_LuUOTYHECABfq9Dh-J7wNzgGN7nJoqB_t4jnZLnqzUJOyw=w2560-h1406-rw" with="360">
+<img src="https://drive.google.com/uc?export=view&id=1U7BfQFTtq6tILO2u3wQhVaDdJX-rdBgZcw" with="360">
 
 ## Project Overview
 This little robot called **WatPi** is assembled using a Raspberry Pi 3, a PiCamera, a DC motor HAT, a chassis kit, and a pair of googly eyes.
@@ -10,11 +10,11 @@ WatPi doesn't like to be controlled by multiple people all at once, but audience
 
 The login look
 
-<img src="https://lh6.googleusercontent.com/B_2uNolieMbhEteb2pyS9rAsuph2vBxLH2M2umShtpUyoJSRxyjMEtcLoRsGEehoM5qjROlTHmbMoR2qKn974Q=w2560-h1406-rw" width="360">
+<img src="https://drive.google.com/uc?export=view&id=1UEfA08mWbKNvh9cwQm-GILiYOpP9Lr9iOg" width="360">
 
 The dashboard look:
 
-<img src="https://lh4.googleusercontent.com/k55DsfBY7LO0Ejza_KYxl0lJOWDDi2cmp3VLugNSe1cUrZwj7V5vj73cLJ4ZNUmQHwpS9H8fgMqDLufqeUiQkw=w2560-h1406-rw" width="360">
+<img src="https://drive.google.com/uc?export=view&id=1zrWMOphOGP1CA1Q44Bmw5digQFj4QKhyYA" width="360">
 
 The gallery look:
 
@@ -46,7 +46,7 @@ WatPi is made happily by (in alphabetical order):
 
 This is us!
 
-<img src="https://lh4.googleusercontent.com/gxCE5epxyn2xp6yZUgUIUUt2g3GarZIf_lQJZOPx2oJr5U1B5mNnMEgf2tfuolk4uumFjhkN8urVZFM=w2560-h1406-rw" width="360" />
+<img src="https://drive.google.com/uc?export=view&id=0B7GJafRDAwSzQWdPc3VPc0hnWTQ" width="360" />
 
 **Check out how it is like when making WatPi, see [video]()**
 
