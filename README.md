@@ -1,20 +1,23 @@
 # WatPi 
 ### Say wat?
 
-<img src="https://lh3.googleusercontent.com/zj6tWkJGGRFxI1uLiMj56U-G7FwOv5WxsltXhYoPHtunmOocZafedfi4cfIP_qw7-pxg-Xjtwb_8EJrimBmOVg=w2560-h1406-rw" with="360">
+<img src="https://lh3.googleusercontent.com/3jjascTUqmt7yjfn2foCdK5uLs37n_nqaU3F-Xz_LuUOTYHECABfq9Dh-J7wNzgGN7nJoqB_t4jnZLnqzUJOyw=w2560-h1406-rw" with="360">
 
 ## Project Overview
 This little robot called **WatPi** is assembled using a Raspberry Pi 3, a PiCamera, a DC motor HAT, a chassis kit, and a pair of googly eyes.
 WatPi is controlled using a web app powered by Django. On the "dashboard" page of the web app, the user can drive the WatPi using a virtual game control panel. The user can also take pictures and see what WatPi sees when it's roaming around in the world. WatPi can also tell what's in the picture, and complement on the scenes it sees. It might say, for instance, "hey, nice ceiling!", or "hey, nice robot!".
 WatPi doesn't like to be controlled by multiple people all at once, but audience can still participate by visiting the "gallery" page. When WatPi takes a picture, and the user who controls it decides to share, the audience can see the picture on the gallery page.
 
+The login look
+
+<img src="https://lh6.googleusercontent.com/B_2uNolieMbhEteb2pyS9rAsuph2vBxLH2M2umShtpUyoJSRxyjMEtcLoRsGEehoM5qjROlTHmbMoR2qKn974Q=w2560-h1406-rw" width="360">
+
 The dashboard look:
 
-<img src="https://lh5.googleusercontent.com/n25RLMyjHWFZ41gVLQBJpqNXGc_aQe6eyMgBAQF4335WZ-F83tl1rXZRfdYq2WMhO55Cx2GbYb7eDLqXcvY7fA=w2560-h1406-rw" width="360">
+<img src="https://lh4.googleusercontent.com/k55DsfBY7LO0Ejza_KYxl0lJOWDDi2cmp3VLugNSe1cUrZwj7V5vj73cLJ4ZNUmQHwpS9H8fgMqDLufqeUiQkw=w2560-h1406-rw" width="360">
 
 The gallery look:
 
-<img src="" width="360>
 
 ## List of Materials
 - A Raspberry Pi, RPi (we used Raspberry Pi 3). Get it at [AdaFruit](https://www.adafruit.com/product/3055).
@@ -43,7 +46,7 @@ WatPi is made happily by (in alphabetical order):
 
 This is us!
 
-<img src="https://lh3.googleusercontent.com/_OOsiFNRYWiPi2KwUIeMnEZffT1IK7cx5ILhM8qNRsNpKilGb-wtAMyRtq15k44mz1jpCqWRt_OKb-8=w2560-h1406-rw" width="360" />
+<img src="https://lh4.googleusercontent.com/gxCE5epxyn2xp6yZUgUIUUt2g3GarZIf_lQJZOPx2oJr5U1B5mNnMEgf2tfuolk4uumFjhkN8urVZFM=w2560-h1406-rw" width="360" />
 
 **Check out how it is like when making WatPi, see [video]()**
 
