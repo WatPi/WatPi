@@ -1,4 +1,4 @@
-# WatPi 
+# [WatPi](www.watpi.com) 
 ### Say wat?
 
 <img src="https://drive.google.com/uc?export=view&id=1U7BfQFTtq6tILO2u3wQhVaDdJX-rdBgZcw" with="360">
@@ -48,5 +48,6 @@ This is us!
 
 <img src="https://drive.google.com/uc?export=view&id=0B7GJafRDAwSzQWdPc3VPc0hnWTQ" width="360" />
 
-**Check out how it is like when making WatPi, see [video]()**
+**Check out how it is like when making WatPi, see [video](https://photos.app.goo.gl/So5Bcs7wapNEAoRm1)**
+
 
