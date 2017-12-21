@@ -1,4 +1,4 @@
-# [WatPi](www.watpi.com) 
+# [WatPi](http://www.watpi.com) 
 ### Say wat?
 
 <img src="https://drive.google.com/uc?export=view&id=1U7BfQFTtq6tILO2u3wQhVaDdJX-rdBgZcw" with="360">
